@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>新闻中心</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/news.css">
+</head>
+
+<body>
+    <header class="header-wrap">
+        <h2 class="header-title21">新闻中心</h2>
+        <h3 class="header-subtitle">lots of fun</h3>
+    </header>
+
+    <!-- 新闻中心列表 -->
+    <div class="news-wrap">
+        <div class="news-list-wrap">
+            <!-- 搜索框 -->
+            <div class="news-search">
+                <input type="text" placeholder="搜索">
+            </div>
+
+            <ul class="tab-menu">
+                <li>企业新闻</li>
+                <li class="tab-active">行业新闻</li>
+                <li>展会新闻</li>
+            </ul>
+
+            <!-- tabs选项卡 -->
+            <div id="content">
+                <div class="tab tab1">
+                    <!-- 暂无内容 -->
+                    <div class="no-contnt">
+                        <img src="./images/search_pic@2x.png" alt="暂无内容icon">
+                        <p>暂无内容</p>
+                    </div>
+                </div>
+                <div class="tab tab2">
+                    <!-- 有数据的情况 -->
+                    <div class="have-content">
+                        <div class="news-list-content" onclick="redirectPage()">
+                            <!-- 视频和图片文件代码都写在这里了，后期只要交互只需要根据返回的值，判断即可显示 -->
+
+                            <!-- 视频文件 -->
+                            <div class="video-con">
+                                <video class="video" poster="">
+                                    <source src="./mp4/news.mp4" >
+                                </video>
+                                <button type="button" class="btn js-play-btn"></button>
+                            </div>
+
+                            <!-- 仅图片文件 -->
+                            <img class="news-list-img" style="display: none;" src="./images/pic_news_video2@2x.png" alt="新闻icon">
+                            <div class="news-right">
+                                <p class="news-title">
+                                    国际外贸食品博览会的开幕式现场直播活动开始了 国际外贸食品博览会的开幕式现场直播活动开始了
+                                </p>
+                                <p class="news-type-time">
+                                    <span class="newspapers">南方都方报</span>
+                                    <span class="news-time">2018/05/06</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="news-list-content" onclick="redirectPage()">
+                            <img class="news-list-img" src="./images/pic_news_video2@2x.png" alt="新闻icon">
+                            <div class="news-right">
+                                <p class="news-title">
+                                    国际外贸食品博览会的开幕式现场直播活动开始了 国际外贸食品博览会的开幕式现场直播活动开始了
+                                </p>
+                                <p class="news-type-time">
+                                    <span class="newspapers">南方都方报</span>
+                                    <span class="news-time">2018/05/06</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="news-list-content" onclick="redirectPage()">
+                            <img class="news-list-img" src="./images/pic_news_video2@2x.png" alt="新闻icon">
+                            <div class="news-right">
+                                <p class="news-title">
+                                    国际外贸食品博览会的开幕式现场直播活动开始了 国际外贸食品博览会的开幕式现场直播活动开始了
+                                </p>
+                                <p class="news-type-time">
+                                    <span class="newspapers">南方都方报</span>
+                                    <span class="news-time">2018/05/06</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="news-list-content" onclick="redirectPage()">
+                            <img class="news-list-img" src="./images/pic_news_video2@2x.png" alt="新闻icon">
+                            <div class="news-right">
+                                <p class="news-title">
+                                    国际外贸食品博览会的开幕式现场直播活动开始了 国际外贸食品博览会的开幕式现场直播活动开始了
+                                </p>
+                                <p class="news-type-time">
+                                    <span class="newspapers">南方都方报</span>
+                                    <span class="news-time">2018/05/06</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- 暂无内容 -->
+                    <div class="no-contnt" style="display: none;">
+                        <img src="./images/search_pic@2x.png" alt="暂无内容icon">
+                        <p>暂无内容</p>
+                    </div>
+                </div>
+                <div class="tab tab3">
+                    <!-- 暂无内容 -->
+                    <div class="no-contnt">
+                        <img src="./images/search_pic@2x.png" alt="暂无内容icon">
+                        <p>暂无内容</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer页脚 -->
+    <footer>
+        <div class="footer">
+            <p><code>&#169</code> DANKAL . All rights reserved</p>
+            <p>粤ICP备16007023号-1</p>
+        </div>
+    </footer>
+    <script src="./js/tabs.js"></script>
+    <script>
+        // 跳转新闻详情页
+        function redirectPage() {
+            window.location.href = './cooperationDetail.html';
+        }
+    </script>
+</body>
+
+</html>

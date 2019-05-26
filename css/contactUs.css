@@ -1,0 +1,214 @@
+@charset "UTF-8";
+
+/* 
+    联系我们样式
+*/
+
+.contact-us-wrap {
+    position: relative;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    padding: 0 1.5rem;
+    margin-top: -1.8rem;
+}
+
+
+/* 合作提交 */
+
+.cooperation-submit {
+    position: absolute;
+    top: -3rem;
+    right: 0;
+    width: 5rem;
+    height: 5rem;
+}
+
+.contact-us-content {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    padding: 2.2rem 1.3rem;
+    background: #fff;
+    border-radius: 13px;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    -ms-border-radius: 13px;
+    -o-border-radius: 13px;
+    box-shadow: 0 1px 10px 0 #FFE69C;
+}
+
+
+/* 搜索框按钮 */
+
+.contact-us-search-wrap {
+    width: 100%;
+    height: 3rem;
+    background: #F6F7F8;
+    border-radius: 17px;
+    -webkit-border-radius: 17px;
+    -moz-border-radius: 17px;
+    -ms-border-radius: 17px;
+    -o-border-radius: 17px;
+}
+
+.contact-us-search-wrap input {
+    width: 100%;
+    height: inherit;
+    background-color: #F6F7F8;
+    border-radius: 17px;
+    -webkit-border-radius: 17px;
+    -moz-border-radius: 17px;
+    -ms-border-radius: 17px;
+    -o-border-radius: 17px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #999999;
+    text-align: center;
+    background: url(../images/search@2x.png) no-repeat 42% center;
+    background-size: 1.3rem 1.3rem;
+}
+
+.contact-us-search-wrap input:focus {
+    background: none;
+}
+
+
+/* 地图 */
+
+.map-wrap img {
+    margin: 1.3rem 0 0 0;
+    width: 100%;
+    height: 16.6rem;
+}
+
+
+/* 店铺地址 */
+
+.map-address-list-wrap li {
+    margin-top: 1.8rem;
+    padding-bottom: 2.2rem;
+    border-bottom: 1px solid #FFE69C;
+}
+
+.map-address-list-wrap li:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.shop-address {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #3B3B3B;
+}
+
+
+/* 具体地址 */
+
+.special-address,
+.tel-contact-man {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #3B3B3B;
+}
+
+.tel-contact-man {
+    margin: .8rem 0 0 0;
+}
+
+.shop-logo-wrap {
+    float: left;
+    width: 11.3rem;
+    height: 5.1rem;
+}
+
+.footer-shop-wrap {
+    margin-top: 1.3rem;
+}
+
+.right-leaf {
+    float: right;
+    width: 6rem;
+    height: 4.4rem;
+}
+
+.company-info-wrap {
+    margin-top: 1rem;
+}
+
+.company-info-wrap li {
+    margin-bottom: .8rem;
+}
+
+.company-name {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #FF9513;
+}
+
+.company-tel,
+.company-address {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #4A4A4A;
+}
+
+.company-address {
+    line-height: 1.5rem;
+}
+
+
+/* 暂无搜索结果地址 */
+
+.empty-search-result {
+    display: none;
+    width: 100%;
+    margin-top: 2.1rem;
+    padding-bottom: 4rem;
+}
+
+.empty-search-result p {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #3B3B3B;
+}
+
+
+/* 二维码 */
+
+.ecode-wrap li {
+    float: left;
+    width: 40%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+.ecode-wrap .ecode-left-wrap,
+.ecode-right-wrap {
+    height: 10rem;
+    background: #fff;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    text-align: center;
+}
+
+.ecode-wrap li img {
+    width: 10.6rem;
+    height: 10.4rem;
+}
+
+
+/* 二维码文字 */
+
+.ecode-text {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #666666;
+}

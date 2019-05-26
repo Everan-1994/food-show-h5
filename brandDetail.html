@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>产品详情页</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/certify.css">
+    <link rel="stylesheet" href="./css/brandDetail.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+</head>
+
+<body>
+    <!-- 页头信息 -->
+    <header class="header-wrap">
+        <h2 class="header-title21">得克萨斯系列袋装进口薯片</h2>
+        <h3 class="header-subtitle">lots of fun</h3>
+    </header>
+
+    <!-- 轮播图 -->
+    <div id="certify" class="brand-detail-m">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./images/pic_home_banner@2x.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/pic_home_banner@2x.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/pic_home_banner@2x.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/pic_home_banner@2x.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/pic_home_banner@2x.png" />
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <!-- 轮播图结束 -->
+
+    <!-- 产品详情信息 -->
+    <div class="product-detail-info">
+        <h3 class="product-detail-title">产品详情</h3>
+        <p class="product-info">
+            美国经典原味75克，乐事无限原味 <br> 乐事薯片40g*10包批发小吃零食大礼包休闲食品组合整箱超大混装
+        </p>
+        <h3 class="ingredient-lists">配料表</h3>
+        <p class="product-address">百事食品(中国)有限公司厂址：上海市松江工业区东兴路99号厂家联系方式：8008201718配料表：马铃薯、植物油、调味料保质期：270 天品牌: Lay’s/乐事系列: 乐事薯片袋装口味: 【实惠30包混合】乐事薯片40g*5包+上好佳混合25包</p>
+    </div>
+    <div class="product-chip-img">
+        <img src="./images/pic_brand_pic3@2x.png" alt="chips">
+    </div>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script>
+        // 首页顶部轮播图
+        certifySwiper = new Swiper('#certify .swiper-container', {
+            watchSlidesProgress: true,
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            loop: true,
+            loopedSlides: 5,
+            autoplay: true,
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            on: {
+                progress: function(progress) {
+                    for (i = 0; i < this.slides.length; i++) {
+                        var slide = this.slides.eq(i);
+                        var slideProgress = this.slides[i].progress;
+                        modify = 1;
+                        if (Math.abs(slideProgress) > 1) {
+                            modify = (Math.abs(slideProgress) - 1) * 0.3 + 1;
+                        }
+                        translate = slideProgress * modify * 260 + 'px';
+                        scale = 1 - Math.abs(slideProgress) / 5;
+                        zIndex = 999 - Math.abs(Math.round(10 * slideProgress));
+                        slide.transform('translateX(' + translate + ') scale(' + scale + ')');
+                        slide.css('zIndex', zIndex);
+                        slide.css('opacity', 1);
+                        if (Math.abs(slideProgress) > 3) {
+                            slide.css('opacity', 0);
+                        }
+                    }
+                },
+                setTransition: function(transition) {
+                    for (var i = 0; i < this.slides.length; i++) {
+                        var slide = this.slides.eq(i)
+                        slide.transition(transition);
+                    }
+
+                }
+            }
+
+        });
+    </script>
+</body>
+
+</html

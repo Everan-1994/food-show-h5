@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+/* 
+    首页轮播图样式
+*/
+
+#certify {
+    position: relative;
+    width: 100vw;
+    margin: 0 auto;
+    margin-top: -8rem;
+}
+
+#certify .swiper-container {
+    padding-bottom: 4.5rem;
+}
+
+#certify .swiper-slide {
+    width: 27.5rem;
+    height: 14.7rem;
+    box-shadow: 0 5px 15px #FFE69C;
+}
+
+#certify .swiper-slide img {
+    display: block;
+    width: 27.5rem;
+    height: 14.7rem;
+}
+
+#certify .swiper-pagination {
+    width: 100%;
+    bottom: 1.5rem;
+}
+
+#certify .swiper-pagination-bullets .swiper-pagination-bullet {
+    width: .6rem;
+    height: .6rem;
+    margin: 0 5px;
+    border: 2 solid #FF9513;
+    background-color: #ffffff;
+    opacity: 1;
+}
+
+#certify .swiper-pagination-bullets .swiper-pagination-bullet-active {
+    width: 1.5rem;
+    height: .6rem;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    background: #FF9513;
+}

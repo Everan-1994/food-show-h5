@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>搜索</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/search.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header-wrap">
+            <h2 class="search-text">搜索</h2>
+            <p class="title">lots of fun</p>
+            <div class="search-btn">
+                <img src="./images/search@2x.png" id="search-icon" class="search-icon" alt="搜索图标">
+                <input type="text" id="searchValue" onfocus="getSearchName()" onkeydown="getSearch()" placeholder="请输入搜索关键词">
+            </div>
+        </header>
+        <!-- 有搜索结果显示 -->
+        <div class="content-wrap">
+            <!-- tab选项卡 -->
+            <ul class="tab-menu">
+                <li class="tab-active">lost of fun</li>
+                <li>品牌合作</li>
+                <li>商超合作</li>
+            </ul>
+            <div id="content">
+                <div class="tab tab1">
+                    <!-- 搜索历史 没有搜索之前显示搜索历史 -->
+                    <div class="search-history-wrap" style="display: none;">
+                        <p class="search-history">
+                            <a>搜索历史</a>
+                            <img src="./images/search_delet@2x.png" onclick="delHistory()" alt="删除图标">
+                        </p>
+                        <div class="history-info">
+                            <a href="#">体育场馆预定</a>
+                            <a href="#">停车泊位</a>
+                            <a href="#">爱心捐赠</a>
+                            <a href="#">音乐课程</a>
+                        </div>
+                    </div>
+
+                    <!-- 显示搜索结果列表 -->
+                    <div class="search-result-fun">
+                        <div class="lots-of-fun-left">
+                            <img src="./images/pic_search_product@2x.png" alt="lots-of-fun">
+                            <p>悠哈果汁软糖零食</p>
+                            <p>最新日本进口的悠哈果汁</p>
+                        </div>
+                        <div class="lots-of-fun-right">
+                            <img src="./images/pic_search_product@2x.png" alt="lots-of-fun">
+                            <p>悠哈果汁软糖零食</p>
+                            <p>最新日本进口的悠哈果汁</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab tab2">
+                    <ul class="tab2-wrap">
+                        <li onclick="redirectBrandCooperation()">
+                            <div class="tabs-circle">
+                                <img class="tabs-circle-img" src="./images/pic_search_logo1@2x.png" alt="霸王花">
+                            </div>
+                            <p class="food-name">梅饴馆美食</p>
+                        </li>
+                        <li onclick="redirectBrandCooperation()">
+                            <div class="tabs-circle">
+                                <img class="tabs-circle-img" src="./images/pic_search_logo2@2x.png" alt="良品铺子">
+                            </div>
+                            <p class="food-name">梅饴馆</p>
+                        </li>
+                        <li onclick="redirectBrandCooperation()">
+                            <div class="tabs-circle">
+                                <img class="tabs-circle-img" src="./images/pic_search_logo3@2x.png" alt="梅饴馆">
+                            </div>
+                            <p class="food-name">梅饴馆美食</p>
+                        </li>
+                        <li onclick="redirectBrandCooperation()">
+                            <div class="tabs-circle">
+                                <img class="tabs-circle-img" src="./images/pic_search_logo4@2x.png" alt="农夫山泉">
+                            </div>
+                            <p class="food-name">梅饴馆</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab tab3">
+                    <ul class="tab3-wrap">
+                        <li onclick="redirectCooperation()">
+                            <img src="./images/pic_search_logo5@2x.png" alt="">
+                            <p>良品铺子零食旗舰店</p>
+                        </li>
+                        <li onclick="redirectCooperation()">
+                            <img src="./images/pic_search_logo6@2x.png" alt="">
+                            <p>良品铺子零食旗舰店</p>
+                        </li>
+                        <li onclick="redirectCooperation()">
+                            <img src="./images/pic_search_logo7@2x.png" alt="">
+                            <p>良品铺子零食旗舰店</p>
+                        </li>
+                        <li onclick="redirectCooperation()">
+                            <img src="./images/pic_search_logo7@2x.png" alt="">
+                            <p>良品铺子零食旗舰店</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 空的内容 -->
+        <div class="empty-wrap">
+            <img src="./images/search_pic@2x.png" alt="暂无内容图片">
+            <p>暂无内容</p>
+        </div>
+
+        <!-- footer页脚 -->
+        <footer>
+            <div class="footer">
+                <p><code>&#169</code> DANKAL . All rights reserved</p>
+                <p>粤ICP备16007023号-1</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 遮罩层 -->
+    <div class="mask" id="mask-wrap">
+        <div class="mask-wrap">
+            <h3 class="mask-title">是否清除搜索历史？</h3>
+            <p>
+                <span onclick="hiddenMask()">否</span>
+                <span onclick="hiddenMask()">是</span>
+            </p>
+        </div>
+    </div>
+    <script src="./js/tabs.js"></script>
+    <script>
+        // 跳转到品牌合作
+        function redirectBrandCooperation() {
+            window.location.href = './brandCooperation.html';
+        }
+
+        // 跳转到商超合作
+        function redirectCooperation() {
+            window.location.href = './cooperation.html';
+        }
+    </script>
+</body>
+
+</html>

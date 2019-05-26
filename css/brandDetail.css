@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+/* 
+  产品详情页  
+*/
+
+
+/* 
+  渐变背景颜色
+*/
+
+body {
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(255, 248, 228, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    /* Firefox */
+    background: -moz-linear-gradient(180deg, rgba(255, 248, 228, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    /* Opear */
+    background: -o-linear-gradient(180deg, rgba(255, 248, 228, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    /* Webkit  */
+    background: -webkit-linear-gradient(180deg, rgba(255, 248, 228, 1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+
+/* 
+  产品详情
+*/
+
+.product-detail-info {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    padding: 0 1.5rem 0 1.7rem;
+    margin-top: 2.8rem;
+}
+
+.product-detail-title {
+    padding-bottom: .5rem;
+    border-bottom: 1px solid #FFE69C;
+    font-size: 1.5rem;
+    color: #030000;
+}
+
+.product-info {
+    margin: 2rem 0 2.5rem 0;
+    font-size: 1.2rem;
+    color: #666666;
+    line-height: 1.5rem;
+}
+
+.ingredient-lists {
+    margin-bottom: .5rem;
+    font-size: 1.3rem;
+    color: #030000;
+}
+
+.product-address {
+    font-size: 1.2rem;
+    color: #666666;
+    line-height: 1.8rem;
+}
+
+.product-chip-img {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+}
+
+.product-chip-img img {
+    width: 23.3rem;
+    height: 16.4rem;
+}
+
+
+/* 轮播图上边距 */
+
+.brand-detail-m {
+    margin-top: -2rem !important;
+}

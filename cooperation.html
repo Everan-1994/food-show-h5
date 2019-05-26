@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>商超合作</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/cooperation.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+</head>
+
+<body>
+    <header class="header-wrap">
+        <h2 class="header-title21">商超合作</h2>
+        <h3 class="header-subtitle">lots of fun</h3>
+    </header>
+
+    <!-- 水平滚动图片 -->
+    <div class="slider-wrap">
+        <a class="slider-img-wrap" href="./cooperationDetail.html">
+            <img src="./images/pic_search_logo5@2x.png" alt="轮播图片">
+            <p class="line"></p>
+            <p class="shop-name">良品铺子零食旗舰店</p>
+        </a>
+        <a class="slider-img-wrap" href="./cooperationDetail.html">
+            <img src="./images/pic_search_logo5@2x.png" alt="轮播图片">
+            <p class="line"></p>
+            <p class="shop-name">良品铺子零食旗舰店</p>
+        </a>
+        <a class="slider-img-wrap" href="./cooperationDetail.html">
+            <img src="./images/pic_search_logo5@2x.png" alt="轮播图片">
+            <p class="line"></p>
+            <p class="shop-name">良品铺子零食旗舰店</p>
+        </a>
+    </div>
+
+    <!-- 滚动按钮 -->
+    <ul class="scroll-shot">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li>
+            <p class="leaf-img"></p>
+        </li>
+    </ul>
+
+
+
+    <!-- 中间内容区域 -->
+    <div class="cooperation-wrap">
+        <p class="our-service">
+            <img src="./images/pic_home_left@2x.png" alt="服务icon">
+            <span>我们的服务</span>
+            <img src="./images/pic_home_right@2x.png" alt="服务icon">
+        </p>
+
+        <div class="cooperation-info">
+            <p>
+                每个人都声称一个强大的网络。但是Twilio是唯一一个拥有多条通往美国主要运营商网络的平台，以及每个地区的强大的冗余运营商互联网络，几乎可以覆盖全球所有的移动用户。每个人都声称一个强大的网络。
+            </p>
+
+            <!-- <ul class="cooperation-shot">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </ul> -->
+            <!-- 轮播图 -->
+            <div id="cultural-wrap">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img class="us-img" src="./images/pic_cooperation_pic@2x.png" alt="关于我们logo">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="us-img" src="./images/pic_cooperation_pic@2x.png" alt="关于我们logo">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="us-img" src="./images/pic_cooperation_pic@2x.png" alt="关于我们logo">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <!-- 轮播图结束 -->
+        </div>
+
+
+    </div>
+
+
+    <!-- footer页脚 -->
+    <footer>
+        <div class="footer">
+            <p><code>&#169</code> DANKAL . All rights reserved</p>
+            <p>粤ICP备16007023号-1</p>
+        </div>
+    </footer>
+
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script>
+        swiper = new Swiper('#cultural-wrap .swiper-container', {
+            autoplay: true, // 可选选项，自动滑动
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
+    </script>
+</body>
+
+</html>

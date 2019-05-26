@@ -1,0 +1,255 @@
+@charset "utf-8";
+
+/* 
+    关于我们  
+*/
+
+.about-us-wrap {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    padding: 0 1.5rem;
+    margin-top: -2rem;
+}
+
+.about-us-info {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    padding: 1.7rem 1.3rem 2.1rem 1.3rem;
+    background: #fff;
+    box-shadow: 0px 1px 10px 0px #FFE69C;
+    border-radius: 13px;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    -ms-border-radius: 13px;
+    -o-border-radius: 13px;
+}
+
+.tab1 {
+    display: block;
+}
+
+.tab2,
+.tab3,
+.tab4 {
+    display: none;
+}
+
+.tab-menu {
+    display: flex;
+    display: -webkit-flex;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.tab-menu li {
+    width: 25%;
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #999999;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.tab-menu li.tab-active {
+    border-bottom: 1px solid #FF9513;
+    color: #4A4A4A;
+}
+
+#content {
+    margin-top: 1.4rem;
+}
+
+.tab1-title {
+    margin-bottom: 1.1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #4A4A4A;
+}
+
+.tab1-text {
+    margin-bottom: 1.3rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #4A4A4A;
+    line-height: 2.1rem;
+    letter-spacing: 1px;
+}
+
+.us-img {
+    width: 100%;
+    height: 13.6rem;
+}
+
+
+/* 常见问题 */
+
+.normal-question {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3.1rem 0 1.7rem 0;
+}
+
+.normal-question span {
+    display: inline-block;
+    margin: .9rem;
+    font-size: 1.9rem;
+    font-weight: 500;
+    color: #333333;
+}
+
+.normal-question img {
+    width: 7.4rem;
+    height: .7rem;
+}
+
+
+/* 常见问题 */
+
+.common-question-wrap {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    padding: 0 1.5rem;
+}
+
+.common-question-wrap li {
+    margin-bottom: 1.1rem;
+}
+
+.question-why {
+    width: 100%;
+    height: 3.7rem;
+    line-height: 3.7rem;
+    background: #fff;
+}
+
+.common-question-text {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+    width: 90%;
+    padding: 0 1.1rem;
+}
+
+
+/* 向右小箭头 */
+
+.right-arrow {
+    display: inline-block;
+    width: .5rem;
+    height: .5rem;
+    border-top: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    vertical-align: middle;
+    text-align: right;
+}
+
+
+/* 向下小箭头 */
+
+.down-arrow {
+    display: inline-block;
+    width: .5rem;
+    height: .5rem;
+    border-bottom: 2px solid #ccc;
+    border-left: 2px solid #ccc;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    vertical-align: middle;
+    text-align: right;
+    display: none;
+}
+
+
+/* 展开的常见问题 */
+
+.open-content {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    padding: .9rem 1.1rem;
+    background: #fff;
+}
+
+
+/* 折叠菜单隐藏 */
+
+.change-expand-wrap {
+    display: none;
+}
+
+
+/* 企业文化轮播图 */
+
+#about-us-wrap {
+    width: 100%;
+    height: 13.6rem;
+}
+
+#about-us-wrap .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+#about-us-wrap .swiper-slide img {
+    width: 100%;
+    height: 13.6rem;
+}
+
+#about-us-wrap .swiper-pagination {
+    width: 100%;
+    bottom: 0;
+}
+
+#about-us-wrap .swiper-pagination-bullets .swiper-pagination-bullet {
+    width: .6rem;
+    height: .6rem;
+    margin: 0 5px;
+    border: 2 solid #FF9513;
+    background-color: #ffffff;
+    opacity: 1;
+}
+
+#about-us-wrap .swiper-pagination-bullets .swiper-pagination-bullet-active {
+    width: 1.5rem;
+    height: .6rem;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    background: #FF9513;
+}

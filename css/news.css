@@ -1,0 +1,229 @@
+@charset "utf-8";
+
+/* 
+    新闻中心
+*/
+
+.news-wrap {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    padding: 0 1.5rem 10rem 1.5rem;
+    margin-top: -1.8rem;
+}
+
+.news-list-wrap {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    padding: 2.1rem 1.3rem 2.1rem 1.3rem;
+    background: #ffffff;
+    box-shadow: 0px 1px 10px 0px #FFE69C;
+    border-radius: 13px;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    -ms-border-radius: 13px;
+    -o-border-radius: 13px;
+}
+
+.news-search {
+    width: 100%;
+    height: 3rem;
+    background: #F6F7F8;
+    border-radius: 17px;
+    -webkit-border-radius: 17px;
+    -moz-border-radius: 17px;
+    -ms-border-radius: 17px;
+    -o-border-radius: 17px;
+    text-align: center;
+}
+
+.news-search img {
+    display: inline-block;
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+.news-search input {
+    width: 100%;
+    height: inherit;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #999999;
+    background-color: #F6F7F8;
+    background: url(../images/search@2x.png) no-repeat;
+    background-position: 40% center;
+    background-size: 1.3rem 1.3rem;
+    text-align: center;
+}
+
+
+/* 获取焦点时，隐藏搜索的图标 */
+
+.news-search input:focus {
+    background: none;
+}
+
+
+/* tab 选项卡的样式 */
+
+
+/* tabs 选项卡菜单 */
+
+.tab-menu {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    height: 3.2rem;
+    padding: 0 5%;
+    margin-top: 2rem;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.tab-menu li {
+    display: inline-block;
+    width: 30%;
+    height: inherit;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #4A4A4A;
+    cursor: pointer;
+    text-align: center;
+}
+
+li.tab-active {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #4A4A4A;
+    border-bottom: 1px solid #F4C12F;
+}
+
+.tab1 {
+    display: none;
+}
+
+.tab2 {
+    display: block;
+}
+
+.tab3 {
+    display: none;
+}
+
+
+/* 新闻列表 */
+
+.news-list-content {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    margin: 1.6rem 0 0 0;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.news-list-img {
+    width: 45%;
+    height: 9rem;
+    margin-right: 1.3rem;
+}
+
+.news-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-title {
+    display: -webkit-box;
+    margin-top: .5rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #4A4A4A;
+    line-height: 2rem;
+    /*  word-break: break-all; 运行在单词内换行  */
+    word-break: break-all;
+    -webkit-line-clamp: 2;
+    /*限制在一个块元素显示的文本的行数*/
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.news-type-time {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    margin-top: 2.3rem;
+}
+
+.newspapers {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #FF9513;
+}
+
+.news-time {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #999999;
+}
+
+
+/* 暂无内容 */
+
+.no-contnt {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.no-contnt img {
+    margin-top: 3.8rem;
+    margin-bottom: 3.7rem;
+    width: 9.6rem;
+    height: 10.4rem;
+}
+
+.no-contnt p {
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: #999999;
+}
+
+
+/* 视频播放 */
+
+.video-con {
+    position: relative;
+    width: 45%;
+    height: 9rem;
+    margin-right: 1.3rem;
+}
+
+.video-con .video {
+    width: 100%;
+    height: 100%;
+}
+
+.video-con .btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent url(../images/pic_news_play@2x.png) no-repeat;
+    background-size: 100% 100%;
+    border: none;
+    outline: none;
+}
+
+.video-con .btn.pause {
+    background-image: url(../images/pause-btn.png);
+}

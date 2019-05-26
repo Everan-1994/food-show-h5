@@ -1,0 +1,259 @@
+@charset "utf-8";
+
+/* 
+    自有品牌样式
+*/
+
+.brand-list {
+    position: relative;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    height: 9.4rem;
+    padding: 0 2rem 0 2rem;
+    margin-bottom: 2.2rem;
+    background: #fff;
+    box-shadow: -1px 9px 15px 0px rgba(255, 241, 200, 1);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.brand-list::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -1.4rem;
+    width: 1.5rem;
+    height: 2.8rem;
+    background: url(../images/ic_brand_more@2x.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.content-wrap {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    padding: 0 1.4rem;
+    background: url(../images/pic_brand_line@2x.png) no-repeat, url(../images/pic_cooperation_leaf@2x.png) no-repeat;
+    background-position: bottom 5rem center, bottom 10rem right;
+    background-size: 100% 5.7rem, 6rem 8.3rem;
+}
+
+.brand-img {
+    width: 7.5rem;
+    height: 9.8rem;
+    margin: -1.3rem 1rem 1.3rem 0;
+}
+
+.brand-info {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    float: left;
+    width: 19rem;
+    padding: 1.4rem 0 0 0;
+}
+
+.brand-info h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #FF9513;
+}
+
+.brand-info p {
+    display: -webkit-box;
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #4A4A4A;
+    line-height: 1.8rem;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    /** 对象作为伸缩盒子模型显示 **/
+    -webkit-box-orient: vertical;
+    /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+    -webkit-line-clamp: 2;
+    /** 显示的行数 **/
+    overflow: hidden;
+    /** 隐藏超出的内容 **/
+}
+
+
+/* 更多 */
+
+.look-more {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.look-more img {
+    width: 75%;
+    height: 1.1rem;
+    vertical-align: middle;
+}
+
+.look-more a {
+    display: inline-block;
+    width: 25%;
+    height: 2.3rem;
+    line-height: 2.3rem;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(270deg, rgba(250, 217, 97, 1) 0%, rgba(247, 107, 28, 1) 100%);
+    cursor: pointer;
+}
+
+
+/* 品牌介绍 */
+
+.brand-intro {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    margin-top: 3.2rem;
+}
+
+.brand-intro::before {
+    content: '';
+    position: absolute;
+    top: -2rem;
+    left: -1rem;
+    width: 6rem;
+    height: 3.6rem;
+    background: url(../images/pic_home_pic@2x.png) no-repeat;
+    background-size: 6rem 3.6rem;
+}
+
+.brand-intro img {
+    width: 5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+}
+
+.brand-intro span {
+    display: inline-block;
+    margin: 0 .9rem;
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #333333;
+}
+
+
+/* 品牌说明 */
+
+.brand-special {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    padding: 2rem 1.8rem;
+    margin-top: 1.1rem;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 1px 10px 0px rgba(255, 230, 156, 1);
+    border-radius: 13px;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    -ms-border-radius: 13px;
+    -o-border-radius: 13px;
+}
+
+.brand-special h3 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #030000;
+}
+
+.brand-special h3::before {
+    content: '';
+    display: inline-block;
+    width: .9rem;
+    height: .9rem;
+    margin-right: 1rem;
+    border: 2px solid rgba(255, 149, 19, 1);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background: #fff;
+}
+
+.brand-special p {
+    margin: 1rem 0 1.1rem 0;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: rgba(74, 74, 74, 1);
+    line-height: 21px;
+    letter-spacing: 1px;
+}
+
+.brand-special img {
+    width: 100%;
+    height: 16rem;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+
+/* 公司信息 */
+
+.company-info {
+    margin-top: 2.4rem;
+}
+
+.company-info p {
+    margin-bottom: .5rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #4A4A4A;
+    letter-spacing: 1px;
+}
+
+.company-name {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #4A4A4A;
+    line-height: 2rem;
+    letter-spacing: 1px;
+}
+
+.manager-length {
+    margin-top: 2.2rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #4A4A4A;
+}
+
+.business-license {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.business-license img {
+    width: 15.2rem;
+    height: 10.7rem;
+    vertical-align: text-top;
+}

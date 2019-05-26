@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>联系我们form 表单填写</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/contactUsForm.css">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header class="header-wrap">
+        <h2 class="header-title21">联系我们</h2>
+        <h3 class="header-subtitle">lots of fun</h3>
+    </header>
+
+    <!-- form表单 -->
+    <div class="contact-us-form-wrap">
+        <div class="contact-us-form-content">
+            <form>
+                <ul>
+                    <li>
+                        <span class="form-label">姓名：</span>
+                        <input type="text" placeholder="你的姓名(必填)">
+                    </li>
+                    <li>
+                        <span class="form-label">邮箱：</span>
+                        <input type="text" placeholder="您的邮箱">
+                    </li>
+                    <li>
+                        <span class="form-label">电话：</span>
+                        <input type="text" placeholder="您的电话号码">
+                    </li>
+                    <li>
+                        <span class="form-label">地址：</span>
+                        <input type="text" placeholder="您详细地址">
+                    </li>
+                    <li>
+                        <span class="form-label">标题：</span>
+                        <input type="text" placeholder="请填写标题">
+                    </li>
+                    <li>
+                        <span class="form-label">留言：</span>
+
+                    </li>
+                    <li>
+                        <textarea placeholder="请输入您的留言"></textarea>
+                    </li>
+                    <li>
+                        <a href="#" class="already-upload-a">
+                            <img class="already-upload" src="./images/pic_contact_commodity@2x.png" alt="上传图片">
+                        </a>
+                        <div class="upload-img">
+                            <input type="file" class="upload-file" accept="image/jpg,image/png,image/jpeg,image/bmp">
+                            <img src="./images/pic_contact_add@2x.png" alt="上传图片">
+                            <p class="max-uploads">上传图片(2/9)</p>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                </ul>
+            </form>
+
+            <div class="submit-btn-wrap">
+                <button type="button" class="submit-btn">提交按钮</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 提交成功mask -->
+    <div class="success-mask">
+        <div class="mask-center">
+            <div class="mask-dialog">
+                <img class="success-icon" src="./images/pic_contact_medal@2x.png" alt="提交成功">
+                <p class="submit-success">提交成功</p>
+                <img class="detele-icon" onclick="delBtn()" src="./images/delete.png" alt="删除按钮">
+            </div>
+        </div>
+    </div>
+
+    <!-- 点击删除按钮隐藏遮罩层 -->
+    <script>
+        var successMask = document.getElementsByClassName("success-mask")[0];
+
+        function delBtn() {
+            successMask.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

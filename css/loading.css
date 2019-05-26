@@ -1,0 +1,147 @@
+@charset "UTF-8";
+
+/* 
+    加载中按钮样式
+*/
+
+.main {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 50%;
+    background: #E0E0E0;
+    text-align: center;
+}
+
+.loadEffect {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.loadEffect span {
+    position: absolute;
+    display: inline-block;
+    width: 2rem;
+    height: .5rem;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background: #FF9513;
+    animation: load 1.04s ease infinite;
+    -webkit-animation: load 1.04s ease infinite;
+}
+
+@-webkit-keyframes load {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.2;
+    }
+}
+
+.loadEffect span:nth-child(1) {
+    left: 0;
+    top: 50%;
+    margin-top: -5px;
+    animation-delay: .13s;
+    -webkit-animation-delay: .13s;
+}
+
+.loadEffect span:nth-child(2) {
+    left: 10px;
+    top: 20px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    animation-delay: .26s;
+    -webkit-animation-delay: .26s;
+}
+
+.loadEffect span:nth-child(3) {
+    left: 50%;
+    top: 10px;
+    margin-left: -15px;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    animation-delay: .39;
+    -webkit-animation-delay: .39s;
+}
+
+.loadEffect span:nth-child(4) {
+    top: 20px;
+    right: 10px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    animation-delay: .52s;
+    -webkit-animation-delay: .52s;
+}
+
+.loadEffect span:nth-child(5) {
+    right: 0;
+    top: 50%;
+    margin-top: -5px;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    animation-delay: .65s;
+    -webkit-animation-delay: .65s;
+}
+
+.loadEffect span:nth-child(6) {
+    right: 10px;
+    bottom: 20px;
+    -webkit-animation-delay: 0.78s;
+    animation-delay: .78s;
+    transform: rotate(225deg);
+    -webkit-transform: rotate(225deg);
+    -moz-transform: rotate(225deg);
+    -ms-transform: rotate(225deg);
+    -o-transform: rotate(225deg);
+}
+
+.loadEffect span:nth-child(7) {
+    bottom: 10px;
+    left: 50%;
+    margin-left: -15px;
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    animation-delay: .91s;
+    -webkit-animation-delay: .91s;
+}
+
+.loadEffect span:nth-child(8) {
+    bottom: 20px;
+    left: 10px;
+    transform: rotate(315deg);
+    -webkit-transform: rotate(315deg);
+    -moz-transform: rotate(315deg);
+    -ms-transform: rotate(315deg);
+    -o-transform: rotate(315deg);
+    animation-delay: 1.04s;
+    -webkit-animation-delay: 1.04s;
+}
+
+
+/* gif 图片 */
+
+.loading-img {
+    display: inline-block;
+    width: 10rem;
+    height: 10rem;
+}

@@ -1,0 +1,417 @@
+@charset "utf-8";
+
+/* 
+    搜索页面样式
+*/
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: #FFF9E9;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: url(../images/search_background@2x.png) no-repeat;
+    background-position: bottom right;
+    background-size: 100% 60%;
+}
+
+.header-wrap {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 12.2rem;
+    background: url(../images/search_top@2x.png) no-repeat;
+    background-size: 100% 78%;
+}
+
+.search-text {
+    font-size: 2.1rem;
+    font-weight: 400;
+    color: #000;
+}
+
+.title {
+    margin: .6rem 0;
+    font-size: 1.5rem;
+    color: #4A4A4A;
+    text-transform: uppercase;
+}
+
+.search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 92%;
+    height: 3.5rem;
+    border-radius: 2.92rem;
+    background: #fff;
+}
+
+.search-icon {
+    display: inline-block;
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+.search-btn input {
+    position: relative;
+    width: 11rem;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #999999;
+}
+
+
+/* tabs 选项卡菜单 */
+
+.tab-menu {
+    box-sizing: border-box;
+    margin-top: -1rem;
+    width: 100%;
+    padding: 0 5%;
+    height: 2.5rem;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.tab-menu li {
+    display: inline-block;
+    width: 30%;
+    height: inherit;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #999;
+    cursor: pointer;
+    text-align: center;
+}
+
+li.tab-active {
+    color: #333;
+    font-weight: 500;
+    border-bottom: 1px solid #F4C12F;
+}
+
+#content {
+    margin-top: 1.6rem;
+}
+
+.search-history {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-history a {
+    line-height: 2.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.search-history img {
+    display: inline-block;
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.history-info {
+    margin-top: 2rem;
+}
+
+.history-info a {
+    display: inline-block;
+    margin-right: 3.6rem;
+    margin-bottom: 2.4rem;
+    font-size: 1.4rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.history-info a:nth-child(3n) {
+    margin-right: 0;
+}
+
+.tab1,
+.tab2,
+.tab3 {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 5%;
+}
+
+.tab1 {
+    display: block;
+}
+
+.tab2 {
+    display: none;
+}
+
+.tab3 {
+    display: none;
+}
+
+
+/* 遮罩层的效果 */
+
+.mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+    z-index: 1;
+    display: none;
+}
+
+.mask-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 28rem;
+    height: 14.6rem;
+    margin-left: -14rem;
+    margin-top: -7.3rem;
+    background: #fff;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.mask-title {
+    margin: 3.8rem 0 0 0;
+    padding-bottom: 3.2rem;
+    border-bottom: 1px solid #E5E5E5;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 2.5rem;
+    color: #000;
+    text-align: center;
+}
+
+.mask-wrap span {
+    display: inline-block;
+    width: 49%;
+    height: 5rem;
+    line-height: 5rem;
+    text-align: center;
+}
+
+.mask-wrap span:first-child {
+    border-right: 1px solid #E5E5E5;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #000;
+}
+
+.mask-wrap span:last-child {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #FF9513;
+}
+
+
+/* 第一个tab选项卡的结果列表样式 */
+
+.search-result-fun {
+    margin-top: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+}
+
+.lots-of-fun-left,
+.lots-of-fun-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 20rem;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    background: #fff;
+}
+
+.lots-of-fun-left img,
+.lots-of-fun-right img {
+    display: inline-block;
+    width: 7.3rem;
+    height: 11rem;
+    margin-top: 1.8rem;
+}
+
+.lots-of-fun-left p:first-of-type,
+.lots-of-fun-right p:first-of-type {
+    margin-top: 2.5rem;
+    margin-bottom: .6rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #FF9513;
+}
+
+.lots-of-fun-left p:last-of-type,
+.lots-of-fun-right p:last-of-type {
+    font-size: 1.4rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #4A4A4A;
+}
+
+
+/* 第二个tab选项卡的样式 */
+
+.tab2-wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+}
+
+.tab2-wrap li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.tab2-wrap li:nth-child(4n) {
+    margin-right: 0;
+}
+
+.tab2-wrap .tabs-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5.8rem;
+    height: 5.8rem;
+    box-shadow: 0px 7px 15px 0px rgba(255, 230, 156, 0.5);
+    border: 1px solid #FFE69C;
+    border-radius: 50%;
+    background: #fff;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.tabs-circle-img {
+    display: inline-block;
+    width: 4.6rem;
+    height: 3.6rem;
+}
+
+.tab2-wrap .food-name {
+    margin-top: .8rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #4A4A4A;
+}
+
+
+/* tab3 选项卡样式 */
+
+.tab3-wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+}
+
+.tab3-wrap li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 31%;
+    height: 12rem;
+    margin-bottom: 1rem;
+    background: #fff;
+    box-shadow: 0px 1px 2px 0px rgba(255, 230, 156, 0.5);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.tab3-wrap img {
+    display: inline-block;
+    width: 5.2rem;
+    height: 4.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.tab3-wrap p {
+    margin: 0 .9rem;
+    padding-top: .6rem;
+    border-top: 1px solid #E8E9ED;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #4A4A4A;
+    line-height: 1.6rem;
+    text-align: center;
+}
+
+
+/* 页脚 */
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+    position: absolute;
+    bottom: 2rem;
+}
+
+.footer p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #999;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.footer p:first-child {
+    margin-bottom: .8rem;
+}
+
+
+/* 搜索无结果的样式 */
+
+.empty-wrap {
+    display: none;
+    margin-top: 6.5rem;
+    text-align: center;
+}
+
+.empty-wrap img {
+    display: inline-block;
+    width: 19.4rem;
+    height: 11.4rem;
+    margin-bottom: 4.3rem
+}
+
+.empty-wrap p {
+    line-height: 2.3rem;
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: #999;
+}

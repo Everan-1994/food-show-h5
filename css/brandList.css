@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+/* 
+    自有品牌详情页
+*/
+
+.product-list {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.product-list li {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-list-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 48%;
+    height: 18.5rem;
+    margin: 0 1rem 1rem 0;
+    background: #fff;
+    box-shadow: 0px 1px 2px 0px rgba(255, 230, 156, 0.5);
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.product-list-info:nth-child(2n) {
+    margin: 0 0 1rem 0;
+}
+
+.product-list-info img {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    width: 7.5rem;
+    height: 11rem;
+}
+
+.product-title {
+    margin-bottom: .6rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: rgba(255, 149, 19, 1);
+    line-height: 15px;
+    text-align: center;
+}
+
+.product-origin {
+    width: 100%;
+    font-weight: 400;
+    color: #4A4A4A;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    text-overflow: ellipsis;
+}
+
+.bottom--bg-wrap {
+    width: 100%;
+    height: 6.7rem;
+    background: url(../images/pic_brand_pic2@2x.png) no-repeat;
+    background-position: right bottom;
+    background-size: 10.5rem 9.6rem;
+}
