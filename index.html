@@ -71,22 +71,8 @@
             <!-- 轮播图 -->
             <div id="certify">
                 <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide" onclick="redirectBrandDetail()">
-                            <img src="./images/pic_home_banner@2x.png" />
-                        </div>
-                        <div class="swiper-slide" onclick="redirectBrandDetail()">
-                            <img src="./images/pic_home_banner@2x.png" />
-                        </div>
-                        <div class="swiper-slide" onclick="redirectBrandDetail()">
-                            <img src="./images/pic_home_banner@2x.png" />
-                        </div>
-                        <div class="swiper-slide" onclick="redirectBrandDetail()">
-                            <img src="./images/pic_home_banner@2x.png" />
-                        </div>
-                        <div class="swiper-slide" onclick="redirectBrandDetail()">
-                            <img src="./images/pic_home_banner@2x.png" />
-                        </div>
+                    <div class="swiper-wrapper banner-swiper">
+                        
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
@@ -99,55 +85,8 @@
             <!-- 品牌合作 -->
             <div class="home-brand-cooperation-wrap">
                 <h2 class="title">品牌合作</h2>
-                <ul>
-                    <li onclick="redirectBrandCooperation()">
-                        <div class="circle-img-wrap">
-                            <img src="./images/pic_search_logo1@2x.png" alt="合作品牌logo">
-                        </div>
-                        <p>梅饴馆美食</p>
-                    </li>
-                    <li onclick="redirectBrandCooperation()">
-                        <div class="circle-img-wrap">
-                            <img src="./images/pic_search_logo2@2x.png" alt="合作品牌logo">
-                        </div>
-                        <p>梅饴馆美食</p>
-                    </li>
-                    <li onclick="redirectBrandCooperation()">
-                        <div class="circle-img-wrap">
-                            <img src="./images/pic_search_logo3@2x.png" alt="合作品牌logo">
-                        </div>
-                        <p>梅饴馆美食</p>
-                    </li>
-                    <li onclick="redirectBrandCooperation()">
-                        <div class="circle-img-wrap">
-                            <img src="./images/pic_search_logo4@2x.png" alt="合作品牌logo">
-                        </div>
-                        <p>梅饴馆美食</p>
-                    </li>
-                    <li onclick="redirectBrandCooperation()">
-                        <div class="circle-img-wrap">
-                            <img src="./images/pic_search_logo3@2x.png" alt="合作品牌logo">
-                        </div>
-                        <p>梅饴馆美食</p>
-                    </li>
-                    <li onclick="redirectBrandCooperation()">
-                        <div class="circle-img-wrap">
-                            <img src="./images/pic_search_logo4@2x.png" alt="合作品牌logo">
-                        </div>
-                        <p>梅饴馆美食</p>
-                    </li>
-                    <li onclick="redirectBrandCooperation()">
-                        <div class="circle-img-wrap">
-                            <img src="./images/pic_search_logo1@2x.png" alt="合作品牌logo">
-                        </div>
-                        <p>梅饴馆美食</p>
-                    </li>
-                    <li onclick="redirectBrandCooperation()">
-                        <div class="circle-img-wrap">
-                            <img src="./images/pic_search_logo2@2x.png" alt="合作品牌logo">
-                        </div>
-                        <p>梅饴馆美食</p>
-                    </li>
+                <ul id="cooperation">
+                    
                 </ul>
             </div>
 
@@ -158,19 +97,9 @@
             <!-- 商超合作 -->
             <div class="home-cooperation-wrap">
                 <h2 class="title">商超合作</h2>
-                <ul class="home-cooperation-ul">
-                    <li onclick="redirectCooperation()">
-                        <img src="./images/pic_search_logo5@2x.png" alt="logo">
-                        <p>良品铺子零食旗舰店</p>
-                    </li>
-                    <li onclick="redirectCooperation()">
-                        <img src="./images/pic_search_logo6@2x.png" alt="logo">
-                        <p>良品铺子零食旗舰店</p>
-                    </li>
-                    <li onclick="redirectCooperation()">
-                        <img src="./images/pic_search_logo7@2x.png" alt="logo">
-                        <p>良品铺子零食旗舰店</p>
-                    </li>
+                <ul class="home-cooperation-ul" id="super">
+                    
+                   
                 </ul>
 
                 <!-- 分页小圆点 -->
@@ -368,50 +297,120 @@
     <script type="text/javascript" src="./js/menu.js"></script>
     <script src="js/swiper.min.js"></script>
     <script src="js/tabs.js"></script>
-    <script src="js/accordion.js"></script>
+    <!-- <script src="js/accordion.js"></script> -->
     <script>
+		$(function(){
+			var base_url = 'http://food.lzdu.com/api/'
+			var img_url = 'http://food.resource.lzdu.com/'
+			//banner
+			 $.ajax({
+			    type:"GET",
+			    url:base_url+'banner',
+			    dataType:"json",
+			    success:function(data){
+					var html = ''
+			       for(var i=0;i<data.length;i++){
+					   var list = data[i];
+					   html +='<div class="swiper-slide" onclick="redirectBrandDetail()">'
+			           html +='<img src="'+img_url+list.img_url+'" />'
+			           html +='</div>'
+				   }
+				   $('.banner-swiper').html(html)
+				   banner()
+			    }
+			});
+			//品牌合作
+			$.ajax({
+			    type:"GET",
+			    url:base_url+'brand',
+			    dataType:"json",
+				data:{pageSize:8},
+			    success:function(data){
+					var brand_data = data.data
+					var brand = ''
+					for(var j=0;j<brand_data.length;j++){
+						var brand_list = brand_data[j]
+						brand += '<li onclick="redirectBrandCooperation()">'
+						brand +=    '<div class="circle-img-wrap">'
+						brand +=        '<img src="'+img_url + brand_list.logo+'" alt="合作品牌logo">'
+						brand +=    '</div>'
+						brand +=    '<p>'+brand_list.name+'</p>'
+						brand += '</li>'
+					}					
+				   $('#cooperation').html(brand)
+				   
+			    }
+			});
+			
+			$.ajax({
+			    type:"GET",
+			    url:base_url+'super',
+			    dataType:"json",
+			    success:function(data){
+					var super_data = data
+					var supers = ''
+					for(var k=0;k<super_data.length;k++){
+						var super_list = super_data[k]
+						supers += '<li onclick="redirectCooperation()">'
+						supers +=    '<img src="'+img_url + super_list.logo+'" alt="合作品牌logo">'
+						supers +=    '<p>'+super_list.name+'</p>'
+						supers += '</li>'
+						
+						
+					}					
+				   $('#super').html(supers)
+				   
+			    }
+			});
+			
+			
+		})
         // 首页顶部轮播图
-        certifySwiper = new Swiper('#certify .swiper-container', {
-            watchSlidesProgress: true, // 开启查看进程
-            slidesPerView: 'auto', // 同时显示的slides数量
-            centeredSlides: true, // 居中
-            loop: true, // 循环
-            loopedSlides: 5, // 循环播放个数
-            autoplay: true, // 自动播放
-            pagination: {
-                el: '.swiper-pagination', // 分页
-            },
-            on: {
-                progress: function(progress) {
-                    for (i = 0; i < this.slides.length; i++) {
-                        var slide = this.slides.eq(i);
-                        var slideProgress = this.slides[i].progress;
-                        modify = 1;
-                        if (Math.abs(slideProgress) > 1) {
-                            modify = (Math.abs(slideProgress) - 1) * 0.3 + 1;
-                        }
-                        translate = slideProgress * modify * 260 + 'px';
-                        scale = 1 - Math.abs(slideProgress) / 5;
-                        zIndex = 999 - Math.abs(Math.round(10 * slideProgress));
-                        slide.transform('translateX(' + translate + ') scale(' + scale + ')');
-                        slide.css('zIndex', zIndex);
-                        slide.css('opacity', 1);
-                        if (Math.abs(slideProgress) > 3) {
-                            slide.css('opacity', 0);
-                        }
-                    }
-                },
-                setTransition: function(transition) {
-                    for (var i = 0; i < this.slides.length; i++) {
-                        var slide = this.slides.eq(i)
-                        slide.transition(transition);
-                    }
-
-                }
-            }
-
-        });
-
+		function banner(){
+			certifySwiper = new Swiper('#certify .swiper-container', {
+			    watchSlidesProgress: true, // 开启查看进程
+			    slidesPerView: 'auto', // 同时显示的slides数量
+			    centeredSlides: true, // 居中
+			    loop: true, // 循环
+			    loopedSlides: 5, // 循环播放个数
+			    autoplay: true, // 自动播放
+			    pagination: {
+			        el: '.swiper-pagination', // 分页
+			    },
+			    on: {
+			        progress: function(progress) {
+			            for (i = 0; i < this.slides.length; i++) {
+			                var slide = this.slides.eq(i);
+			                var slideProgress = this.slides[i].progress;
+			                modify = 1;
+			                if (Math.abs(slideProgress) > 1) {
+			                    modify = (Math.abs(slideProgress) - 1) * 0.3 + 1;
+			                }
+			                translate = slideProgress * modify * 260 + 'px';
+			                scale = 1 - Math.abs(slideProgress) / 5;
+			                zIndex = 999 - Math.abs(Math.round(10 * slideProgress));
+			                slide.transform('translateX(' + translate + ') scale(' + scale + ')');
+			                slide.css('zIndex', zIndex);
+			                slide.css('opacity', 1);
+			                if (Math.abs(slideProgress) > 3) {
+			                    slide.css('opacity', 0);
+			                }
+			            }
+			        },
+			        setTransition: function(transition) {
+			            for (var i = 0; i < this.slides.length; i++) {
+			                var slide = this.slides.eq(i)
+			                slide.transition(transition);
+			            }
+			
+			        }
+			    }
+			
+			});
+			
+		}
+        
+		
         // 企业文化轮播图
         swiper = new Swiper('#cultural-wrap .swiper-container', {
             autoplay: true, // 可选选项，自动滑动
