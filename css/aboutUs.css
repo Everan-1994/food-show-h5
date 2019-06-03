@@ -54,6 +54,7 @@
     white-space: nowrap;
 }
 
+
 .tab-menu li.tab-active {
     border-bottom: 1px solid #FF9513;
     color: #4A4A4A;
@@ -252,4 +253,9 @@
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
     background: #FF9513;
+}
+@media (max-width:320px) {
+	.tab-menu li{
+		font-size: 13px;
+	}
 }

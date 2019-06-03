@@ -6,44 +6,46 @@
 
 #certify {
     position: relative;
-    width: 100vw;
+    width: 100%;
     margin: 0 auto;
     margin-top: -8rem;
 }
 
 #certify .swiper-container {
-    padding-bottom: 4.5rem;
+    padding-bottom: 25px;
 }
 
 #certify .swiper-slide {
-    width: 27.5rem;
-    height: 14.7rem;
-    box-shadow: 0 5px 15px #FFE69C;
+    width: 100%;
+    
 }
 
 #certify .swiper-slide img {
     display: block;
-    width: 27.5rem;
-    height: 14.7rem;
+    width: 84%;
+    height: auto;
+	margin: 0 auto;
+	border-radius: 10px;
+	box-shadow: 0 3px 8px #FFE69C;
 }
 
 #certify .swiper-pagination {
     width: 100%;
-    bottom: 1.5rem;
+    bottom: 0px;
 }
 
 #certify .swiper-pagination-bullets .swiper-pagination-bullet {
-    width: .6rem;
-    height: .6rem;
+    width: 6px;
+    height: 6px;
     margin: 0 5px;
-    border: 2 solid #FF9513;
-    background-color: #ffffff;
+    border: 1px solid #FF9513;
+    background-color: transparent;
     opacity: 1;
+	border-radius: 50%;
 }
 
 #certify .swiper-pagination-bullets .swiper-pagination-bullet-active {
-    width: 1.5rem;
-    height: .6rem;
+    width: 15px;
     border-radius: 3px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;

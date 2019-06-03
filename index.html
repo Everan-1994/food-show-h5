@@ -29,7 +29,7 @@
                             <i></i>
                         </li>
                         <li>
-                            <a href="./brand.html">品牌</a>
+                            <a href="./brandCooperation.html">品牌</a>
                             <i></i>
                         </li>
                         <li>
@@ -78,41 +78,43 @@
                 <div class="swiper-pagination"></div>
             </div>
             <!-- 轮播图结束 -->
-
+			<div style="position: relative;">
             <!-- 分割线 -->
-            <div class="divide-line"></div>
+            <div class="divide-line" style="position: absolute;z-index: 0;top: 15px;left: 0;"></div>
 
             <!-- 品牌合作 -->
             <div class="home-brand-cooperation-wrap">
+				
                 <h2 class="title">品牌合作</h2>
                 <ul id="cooperation">
                     
                 </ul>
             </div>
+			</div>
 
             <!-- 分割线 -->
-            <div class="divide-line"></div>
+          
 
 
             <!-- 商超合作 -->
-            <div class="home-cooperation-wrap">
-                <h2 class="title">商超合作</h2>
-                <ul class="home-cooperation-ul" id="super">
-                    
-                   
-                </ul>
-
-                <!-- 分页小圆点 -->
-                <ul class="page-dot">
-                    <li class="page-dot-active"></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </div>
-
+			<div style="position: relative;">
+				  <div class="divide-line" style="position: absolute;z-index: 0;top: 20px;left: 0;"></div>
+				<div class="home-cooperation-wrap">
+				    <h2 class="title">商超合作</h2>
+					<div class="super-warp">
+						<ul class="home-cooperation-ul" id="super">
+						    
+						   
+						</ul>
+					</div>
+	
+				</div>
+				
+			</div>
+            
 
             <!-- 底部花边分割线 -->
-            <div class="img-line"></div>
+			<img src="images/pic_home_line@2x.png" class="img-line" />
 
 
             <!-- 新闻列表 -->
@@ -122,71 +124,13 @@
                 <img src="./images/pic_home_right@2x.png" alt="右logo">
             </div>
 
-            <ul class="home-news-list-wrap">
-                <li class="home-news-list" onclick="redirectNews()">
-                    <img src="./images/pic_home_news1@2x.png" alt="left-img">
-                    <div class="news-header-title-wrap">
-                        <h3>业务顾问助于企业多维度</h3>
-                        <!-- 右侧三个小圆点 -->
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </div>
-
-                    <p class="news-content">
-                        想要打动“社交为王”时代下的消费者，必满足TA的社交需求。
-                    </p>
-                    <p class="time-newstype">
-                        <span class="time">2018/05/06</span>
-                        <span class="newspaper">南方都方报</span>
-                    </p>
-                </li>
-                <li class="home-news-list" onclick="redirectNews()">
-                    <img src="./images/pic_home_news1@2x.png" alt="left-img">
-                    <div class="news-header-title-wrap">
-                        <h3>业务顾问助于企业多维度</h3>
-                        <!-- 右侧三个小圆点 -->
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </div>
-
-                    <p class="news-content">
-                        想要打动“社交为王”时代下的消费者，必满足TA的社交需求。
-                    </p>
-                    <p class="time-newstype">
-                        <span class="time">2018/05/06</span>
-                        <span class="newspaper">南方都方报</span>
-                    </p>
-                </li>
-                <li class="home-news-list" onclick="redirectNews()">
-                    <img src="./images/pic_home_news1@2x.png" alt="left-img">
-                    <div class="news-header-title-wrap">
-                        <h3>业务顾问助于企业多维度</h3>
-                        <!-- 右侧三个小圆点 -->
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </div>
-
-                    <p class="news-content">
-                        想要打动“社交为王”时代下的消费者，必满足TA的社交需求。
-                    </p>
-                    <p class="time-newstype">
-                        <span class="time">2018/05/06</span>
-                        <span class="newspaper">南方都方报</span>
-                    </p>
-                </li>
+            <ul class="home-news-list-wrap" id="news">
+                
+               
             </ul>
 
             <!-- 底部花边分割线 -->
-            <div class="img-line"></div>
+            <img src="images/pic_home_line@2x.png" class="img-line" />
 
 
             <!-- 企业文化 -->
@@ -208,44 +152,11 @@
                         <li>企业理念</li>
                     </ul>
                     <div id="content">
-                        <div class="tab tab1" onclick="redirectAboutUs()">
-                            <h3 class="tab1-title">梅饴馆国际进口食品介绍 </h3>
-                            <p class="tab1-text">
-                                每个人都声称一个强大的网络。但是Twilio是唯一一个拥有多条通往美国主要运营商网络的平台，以及每个地区的强大的冗余运营商互联网络，几乎可以覆盖全球所有的移动用户。都声称一个强大的网络。
-                            </p>
-
-                            <!-- 轮播图 -->
-                            <div id="cultural-wrap">
-                                <div class="swiper-container">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <img class="us-img" src="./images/pic_cooperation_pic@2x.png" alt="关于我们logo">
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img class="us-img" src="./images/pic_cooperation_pic@2x.png" alt="关于我们logo">
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img class="us-img" src="./images/pic_cooperation_pic@2x.png" alt="关于我们logo">
-                                        </div>
-                                    </div>
-                                    <div class="swiper-pagination"></div>
-                                </div>
-                            </div>
-                            <!-- 轮播图结束 -->
-
-                        </div>
-                        <div class="tab tab2">
-                            董事长致辞
-                        </div>
-                        <div class="tab tab3">
-                            企业文化
-                        </div>
-                        <div class="tab tab4">
-                            企业理念
-                        </div>
+                       
                     </div>
                 </div>
             </div>
+			<img src="images/pic_home_line@2x.png" class="img-line" />
 
             <!-- 常见问题 -->
             <div class="home-normal-question">
@@ -255,31 +166,8 @@
             </div>
 
             <!-- 常见问题列表 -->
-            <div class="container collapse">
-                <details>
-                    <summary> Q:海外直购家具会比在国内便宜吗？</summary>
-                    <div class="details-wrapper">
-                        <div class="details-styling">
-                            <p>A:从国外直接购买家具所需费用仅相当于国内专卖店零售价格的50%左右，有的更低</p>
-                        </div>
-                    </div>
-                </details>
-                <details>
-                    <summary> Q:海外直购家具会比在国内便宜吗？</summary>
-                    <div class="details-wrapper">
-                        <div class="details-styling">
-                            <p>A:从国外直接购买家具所需费用仅相当于国内专卖店零售价格的50%左右，有的更低</p>
-                        </div>
-                    </div>
-                </details>
-                <details>
-                    <summary> Q:海外直购家具会比在国内便宜吗？</summary>
-                    <div class="details-wrapper">
-                        <div class="details-styling">
-                            <p>A:从国外直接购买家具所需费用仅相当于国内专卖店零售价格的50%左右，有的更低</p>
-                        </div>
-                    </div>
-                </details>
+            <div class="container collapse" id="problem">
+                
             </div>
             <!-- 常见问题列表 end-->
             <!-- 页脚信息 -->
@@ -300,6 +188,8 @@
     <!-- <script src="js/accordion.js"></script> -->
     <script>
 		$(function(){
+			
+			
 			var base_url = 'http://food.lzdu.com/api/'
 			var img_url = 'http://food.resource.lzdu.com/'
 			//banner
@@ -311,8 +201,10 @@
 					var html = ''
 			       for(var i=0;i<data.length;i++){
 					   var list = data[i];
-					   html +='<div class="swiper-slide" onclick="redirectBrandDetail()">'
+					   html +='<div class="swiper-slide" >'
+					    html +='<a href="'+list.jump_url+'">'
 			           html +='<img src="'+img_url+list.img_url+'" />'
+					    html +='</a>'
 			           html +='</div>'
 				   }
 				   $('.banner-swiper').html(html)
@@ -330,7 +222,7 @@
 					var brand = ''
 					for(var j=0;j<brand_data.length;j++){
 						var brand_list = brand_data[j]
-						brand += '<li onclick="redirectBrandCooperation()">'
+						brand += '<li onclick="redirectBrandCooperation('+brand_list.id+')">'
 						brand +=    '<div class="circle-img-wrap">'
 						brand +=        '<img src="'+img_url + brand_list.logo+'" alt="合作品牌logo">'
 						brand +=    '</div>'
@@ -351,10 +243,10 @@
 					var supers = ''
 					for(var k=0;k<super_data.length;k++){
 						var super_list = super_data[k]
-						supers += '<li onclick="redirectCooperation()">'
-						supers +=    '<img src="'+img_url + super_list.logo+'" alt="合作品牌logo">'
+						supers += '<li onclick="redirectCooperation('+super_list.id+')"><div class="warp">'
+						supers +=    '<div class="super-img-warp"><img src="'+img_url + super_list.logo+'" alt="合作品牌logo"></div>'
 						supers +=    '<p>'+super_list.name+'</p>'
-						supers += '</li>'
+						supers += '</div></li>'
 						
 						
 					}					
@@ -363,37 +255,132 @@
 			    }
 			});
 			
+			$.ajax({
+			    type:"GET",
+			    url:base_url+'news_list?type=0&page=1&pageSize=3',
+			    dataType:"json",
+			    success:function(data){
+					var news = data
+					var news_html = ''
+					for(var x=0;x<news.length;x++){
+						var new_list = news[x]						
+						news_html +='<li class="home-news-list" onclick="redirectNews('+new_list.id+')">'
+						    news_html +='<img src="'+img_url+new_list.image+'" alt="left-img">'
+						    news_html +='<div class="news-header-title-wrap">'
+						       news_html += '<h3>'+new_list.title+'</h3>'						        
+						       news_html += '<ul>'
+						         news_html +=   '<li></li>'
+						           news_html += '<li></li>'
+						          news_html +=  '<li></li>'
+						       news_html +=' </ul>'
+						   news_html += '</div>'						
+						   news_html +=' <p class="news-content">'
+						   news_html +=     new_list.intro
+						   news_html += '</p>'
+						   news_html += '<p class="time-newstype">'
+						      news_html += '<span class="time">'+(new_list.created_at).replace(/-/g,'/')
+							  +'</span>'
+						      news_html +=  '<span class="newspaper">'+new_list.from+'</span>'
+						    news_html +='</p>'
+						news_html +='</li>'						
+						
+					}					
+				   $('#news').html(news_html)
+				   
+			    }
+			});
+			
+			
+			$.ajax({
+			    type:"GET",
+			    url:base_url+'us_problem?pageSize=3',
+			    dataType:"json",
+			    success:function(data){
+					var about_data = data
+					var about = ''
+					for(var h=0;h<about_data.about_us.length;h++){
+						var about_list = about_data.about_us[h]
+						 about += '<div class="tab tab'+(h+1)+'">'
+						    about += '<h3 class="tab1-title">'+about_list.title+' </h3>'
+						    about += '<div class="tab1-text">'
+							about += about_list.content
+						   about += ' </div>'
+												    
+						   //  about += '<div id="cultural-wrap">'
+						   //    about +=  ' <div class="swiper-container">'
+						   //         about +=  '<div class="swiper-wrapper">'
+						   //             about +=  '<div class="swiper-slide">'
+						   //                 about +=  '<img class="us-img" src="./images/pic_cooperation_pic@2x.png" alt="关于我们logo">'
+						   //             about +=  '</div>'
+						   //             
+						   //          about += '</div>'
+						   //         about += ' <div class="swiper-pagination"></div>'
+						   //     about +=  '</div>'
+						   // about += ' </div>'						    
+						about += '</div>'						                 						
+					}
+					
+					var problem_html = ''
+					for(var q=0;q<about_data.common_problem.data.length;q++){
+						var problem = about_data.common_problem.data[q];						
+						problem_html += '<div class="problem-list">'
+						    problem_html += '<div class="answer"> Q:'+problem.question+'</div>'						   
+						      problem_html +=  '<div class="details-styling">'
+						        problem_html +=    '<p>A:'+problem.answer+'</p>'
+						      problem_html += ' </div>'						   
+						problem_html += '</div>'
+					}
+				   $('#content').html(about)
+				    $('#problem').html(problem_html)
+					
+					
+					$('.problem-list').click(function(){
+						$(this).find('.details-styling').toggle()
+						var deta = $(this).find('.details-styling')
+						if(deta.is(':visible')){
+							$(this).addClass('open')
+						}else{
+							$(this).removeClass('open')
+						}
+						
+					})
+				   
+			    }
+			});
+			
+			
 			
 		})
         // 首页顶部轮播图
 		function banner(){
 			certifySwiper = new Swiper('#certify .swiper-container', {
-			    watchSlidesProgress: true, // 开启查看进程
-			    slidesPerView: 'auto', // 同时显示的slides数量
-			    centeredSlides: true, // 居中
-			    loop: true, // 循环
-			    loopedSlides: 5, // 循环播放个数
-			    autoplay: true, // 自动播放
-			    pagination: {
-			        el: '.swiper-pagination', // 分页
-			    },
+				watchSlidesProgress: true,
+				centeredSlides: true,
+				slidesPerView: 'auto',
+				loopedSlides: 3,
+				loop: true,
+				autoplay: true, // 自动播放
+				pagination: {
+				    el: '.swiper-pagination', // 分页
+				},
 			    on: {
 			        progress: function(progress) {
+						var width = $(window).width()
 			            for (i = 0; i < this.slides.length; i++) {
 			                var slide = this.slides.eq(i);
 			                var slideProgress = this.slides[i].progress;
-			                modify = 1;
+			                var modify = 1;
 			                if (Math.abs(slideProgress) > 1) {
-			                    modify = (Math.abs(slideProgress) - 1) * 0.3 + 1;
+			                	modify = (Math.abs(slideProgress) - 1) * 0.1 + 1;
 			                }
-			                translate = slideProgress * modify * 260 + 'px';
-			                scale = 1 - Math.abs(slideProgress) / 5;
-			                zIndex = 999 - Math.abs(Math.round(10 * slideProgress));
+			                var translate = slideProgress * modify * 17.5+ '%';
+			                var scale = 1 - Math.abs(slideProgress) / 8;
+			                var zIndex = 999 - Math.abs(Math.round(10 * slideProgress));
 			                slide.transform('translateX(' + translate + ') scale(' + scale + ')');
 			                slide.css('zIndex', zIndex);
 			                slide.css('opacity', 1);
 			                if (Math.abs(slideProgress) > 3) {
-			                    slide.css('opacity', 0);
+			                	slide.css('opacity', 0);
 			                }
 			            }
 			        },
@@ -419,17 +406,17 @@
             },
         });
         // 跳转到品牌合作
-        function redirectBrandCooperation() {
-            window.location.href = "./brandCooperation.html";
+        function redirectBrandCooperation(id) {
+            window.location.href = "./cooperationDetail.html?id="+id;
         }
         // 跳转到商超合作
-        function redirectCooperation() {
-            window.location.href = "./cooperation.html";
+        function redirectCooperation(x) {
+            window.location.href = "./businessSuperCooperationDetail.html?id="+x;
         }
 
         // 跳转到新闻中心
-        function redirectNews() {
-            window.location.href = "./news.html";
+        function redirectNews(id) {
+            window.location.href = "./newsDetail.html?id="+id;
         }
 
         // 跳转到关于我们页面
@@ -437,10 +424,7 @@
             window.location.href = "./aboutUs.html";
         }
 
-        // 产品详情页
-        function redirectBrandDetail() {
-            window.location.href = "./brandDetail.html";
-        }
+       
     </script>
 </body>
 

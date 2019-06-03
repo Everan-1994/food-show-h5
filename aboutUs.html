@@ -30,38 +30,7 @@
                 <li>企业理念</li>
             </ul>
             <div id="content">
-                <div class="tab tab1">
-                    <h3 class="tab1-title">梅饴馆国际进口食品介绍 </h3>
-                    <p class="tab1-text">
-                        每个人都声称一个强大的网络。但是Twilio是唯一一个拥有多条通往美国主要运营商网络的平台，以及每个地区的强大的冗余运营商互联网络，几乎可以覆盖全球所有的移动用户。都声称一个强大的网络。
-                    </p>
-                    <div id="about-us-wrap">
-                        <div class="swiper-container">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img class="us-img" src="./images/pic_cooperation_pic@2x.png" alt="关于我们logo">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img class="us-img" src="./images/pic_cooperation_pic@2x.png" alt="关于我们logo">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img class="us-img" src="./images/pic_cooperation_pic@2x.png" alt="关于我们logo">
-                                </div>
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div>
-                    </div>
-                    <!-- 轮播图结束 -->
-                </div>
-                <div class="tab tab2">
-                    董事长致辞
-                </div>
-                <div class="tab tab3">
-                    企业文化
-                </div>
-                <div class="tab tab4">
-                    企业理念
-                </div>
+                
             </div>
         </div>
     </div>
@@ -74,31 +43,8 @@
     </div>
 
     <!-- 常见问题列表 -->
-    <div class="container collapse">
-        <details>
-            <summary> Q:海外直购家具会比在国内便宜吗？</summary>
-            <div class="details-wrapper">
-                <div class="details-styling">
-                    <p>A:从国外直接购买家具所需费用仅相当于国内专卖店零售价格的50%左右，有的更低</p>
-                </div>
-            </div>
-        </details>
-        <details>
-            <summary> Q:海外直购家具会比在国内便宜吗？</summary>
-            <div class="details-wrapper">
-                <div class="details-styling">
-                    <p>A:从国外直接购买家具所需费用仅相当于国内专卖店零售价格的50%左右，有的更低</p>
-                </div>
-            </div>
-        </details>
-        <details>
-            <summary> Q:海外直购家具会比在国内便宜吗？</summary>
-            <div class="details-wrapper">
-                <div class="details-styling">
-                    <p>A:从国外直接购买家具所需费用仅相当于国内专卖店零售价格的50%左右，有的更低</p>
-                </div>
-            </div>
-        </details>
+    <div class="container collapse" id="problem">
+       
     </div>
 
     <!-- 页脚信息 -->
@@ -113,13 +59,76 @@
     <script src="./js/swiper.min.js"></script>
     <script src="js/accordion.js"></script>
     <script>
+		
+		$(function(){
+			var base_url = 'http://food.lzdu.com/api/'
+			var img_url = 'http://food.resource.lzdu.com/'
+					$.ajax({
+				    type:"GET",
+				    url:base_url+'us_problem?pageSize=3',
+				    dataType:"json",
+				    success:function(data){
+						var about_data = data
+						var about = ''
+						for(var h=0;h<about_data.about_us.length;h++){
+							var about_list = about_data.about_us[h]
+							 about += '<div class="tab tab'+(h+1)+'">'
+							    about += '<h3 class="tab1-title">'+about_list.title+' </h3>'
+							    about += '<div class="tab1-text">'
+								about += about_list.content
+							   about += ' </div>'
+													    
+							   //  about += '<div id="cultural-wrap">'
+							   //    about +=  ' <div class="swiper-container">'
+							   //         about +=  '<div class="swiper-wrapper">'
+							   //             about +=  '<div class="swiper-slide">'
+							   //                 about +=  '<img class="us-img" src="./images/pic_cooperation_pic@2x.png" alt="关于我们logo">'
+							   //             about +=  '</div>'
+							   //             
+							   //          about += '</div>'
+							   //         about += ' <div class="swiper-pagination"></div>'
+							   //     about +=  '</div>'
+							   // about += ' </div>'						    
+							about += '</div>'						                 						
+						}
+						
+						var problem_html = ''
+						for(var q=0;q<about_data.common_problem.data.length;q++){
+							var problem = about_data.common_problem.data[q];						
+							problem_html += '<div class="problem-list">'
+							    problem_html += '<div class="answer"> Q:'+problem.question+'</div>'						   
+							      problem_html +=  '<div class="details-styling">'
+							        problem_html +=    '<p>A:'+problem.answer+'</p>'
+							      problem_html += ' </div>'						   
+							problem_html += '</div>'
+						}
+					   $('#content').html(about)
+					    $('#problem').html(problem_html)
+						
+						
+						$('.problem-list').click(function(){
+							$(this).find('.details-styling').toggle()
+							var deta = $(this).find('.details-styling')
+							if(deta.is(':visible')){
+								$(this).addClass('open')
+							}else{
+								$(this).removeClass('open')
+							}
+							
+						})
+					   
+				    }
+				});
+				
+				
+		})
         // 关于我们轮播图
-        swiper = new Swiper('#about-us-wrap .swiper-container', {
-            autoplay: true, // 可选选项，自动滑动
-            pagination: {
-                el: '.swiper-pagination',
-            },
-        });
+        // swiper = new Swiper('#about-us-wrap .swiper-container', {
+        //     autoplay: true, // 可选选项，自动滑动
+        //     pagination: {
+        //         el: '.swiper-pagination',
+        //     },
+        // });
     </script>
 </body>
 

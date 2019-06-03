@@ -1,61 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <title>自有品牌详情</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/brandList.css">
-</head>
+	<head>
+		<title>自有品牌详情</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="./css/reset.css">
+		<link rel="stylesheet" href="./css/common.css">
+		<link rel="stylesheet" href="./css/brandList.css">
+	</head>
 
-<body>
-    <!-- 头部 -->
-    <header class="header-wrap">
-        <h2 class="header-title21">产品列表</h2>
-        <h3 class="header-subtitle">lots of fun </h3>
-    </header>
+	<body>
+		<!-- 头部 -->
+		<header class="header-wrap">
+			<h2 class="header-title21">产品列表</h2>
+			<h3 class="header-subtitle">lots of fun </h3>
+		</header>
 
-    <!-- 产品列表 -->
-    <ul class="product-list">
-        <li>
-            <a class="product-list-info" href="./brandDetail.html">
-                <img src="./images/pic_brand_product@2x.png" alt="产品列表">
-                <p class="product-title">悠哈果汁软糖零食</p>
-                <p class="product-origin">最新日本进口的悠哈果汁</p>
-            </a>
-            <a class="product-list-info" href="./brandDetail.html">
-                <img src="./images/pic_brand_product@2x.png" alt="产品列表">
-                <p class="product-title">悠哈果汁软糖零食</p>
-                <p class="product-origin">最新日本进口的悠哈果汁</p>
-            </a>
-            <a class="product-list-info" href="./brandDetail.html">
-                <img src="./images/pic_brand_product@2x.png" alt="产品列表">
-                <p class="product-title">悠哈果汁软糖零食</p>
-                <p class="product-origin">最新日本进口的悠哈果汁</p>
-            </a>
-            <a class="product-list-info" href="./brandDetail.html">
-                <img src="./images/pic_brand_product@2x.png" alt="产品列表">
-                <p class="product-title">悠哈果汁软糖零食</p>
-                <p class="product-origin">最新日本进口的悠哈果汁</p>
-            </a>
-            <a class="product-list-info" href="./brandDetail.html">
-                <img src="./images/pic_brand_product@2x.png" alt="产品列表">
-                <p class="product-title">悠哈果汁软糖零食</p>
-                <p class="product-origin">最新日本进口的悠哈果汁</p>
-            </a>
-            <a class="product-list-info" href="./brandDetail.html">
-                <img src="./images/pic_brand_product@2x.png" alt="产品列表">
-                <p class="product-title">悠哈果汁软糖零食</p>
-                <p class="product-origin">最新日本进口的悠哈果汁</p>
-            </a>
-        </li>
-    </ul>
+		<!-- 产品列表 -->
+		<ul class="product-list">
+			<li id="brand">
 
-    <!-- 底部背景 -->
-    <div class="bottom--bg-wrap">
-    </div>
-</body>
+			</li>
+		</ul>
+
+		<!-- 底部背景 -->
+		<div class="bottom--bg-wrap">
+		</div>
+	</body>
 
 </html>
+<script src="./js/jquery.min.js"></script>
+<script>
+	$(function() {
+		var base_url = 'http://food.lzdu.com/api/'
+		var img_url = 'http://food.resource.lzdu.com/'
+		var page = 1
+		getData(page)
+		function getData(pages) {
+			page = pages
+			$.ajax({
+				type: "GET",
+				url: base_url + 'own_brand?page=' + page + '&pageSize=10',
+				dataType: "json",
+				success: function(data) {
+					var html = ''
+					if (data.data.length > 0) {
+						for (var i = 0; i < data.data.length; i++) {
+							var list = data.data[i];
+							html += '<a class="product-list-info" href="./brandDetail.html?id=' + list.id + '">'
+							html += '<img src="' + img_url + list.goods_img + '" alt="产品列表">'
+							html += '<p class="product-title">' + list.goods_name + '</p>'
+							html += '<p class="product-origin">' + list.goods_intro + '</p>'
+							html += '</a>'
+
+
+						}
+					} else if (data.data.length < 10) {
+						$(window).unbind()
+					} else {
+						html += '<div class="no-contnt">'
+						html += '<img src="./images/search_pic@2x.png" alt="暂无内容icon">'
+						html += '<p>暂无内容</p>'
+						html += '</div>'
+					}
+
+					$('#brand').append(html)
+
+				}
+			});
+		}
+
+
+
+		$(window).bind('scroll', function() {
+			var height = $(document).height()
+			var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+			if (scrollTop + window.innerHeight >= (document.body.offsetHeight - 100)) {
+				getData(page + 1)
+			}
+		})
+	})
+</script>

@@ -81,21 +81,24 @@
     font-size: 1.4rem;
     font-weight: 400;
     color: #999;
+	 -webkit-appearance: none;
 }
 
 .already-upload-a {
     position: relative;
+	float: left;
+	display: inline-block;
 }
 
-.already-upload-a::after {
-    content: '';
-    position: absolute;
-    right: -3px;
-    top: -5px;
-    width: 1.4rem;
-    height: 1.4rem;
-    background: url(../images/pic_contact_close@2x.png) no-repeat;
-    background-size: 97% 100%;
+
+.delete-img{
+	position: absolute;
+	right: -3px;
+	top: -5px;
+	width: 1.4rem;
+	height: 1.4rem;
+	background: url(../images/pic_contact_close@2x.png) no-repeat;
+	background-size: 97% 100%;
 }
 
 .already-upload {
@@ -143,7 +146,7 @@
     z-index: 1;
     opacity: 0;
     width: 6rem;
-    height: 10rem;
+    height: 6rem;
 }
 
 
@@ -194,6 +197,7 @@
     left: 0;
     background: rgba(0, 0, 0, .7);
     z-index: 1;
+	display: none;
 }
 
 .mask-center {

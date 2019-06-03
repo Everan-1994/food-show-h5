@@ -21,28 +21,8 @@
 
         <div class="content-wrap">
             <!-- 品牌列表 -->
-            <ul>
-                <li class="brand-list" onclick="redirectPage()">
-                    <img class="brand-img" src="./images/pic_brand_product@2x.png" alt="自有品牌">
-                    <div class="brand-info">
-                        <h2>UHA悠哈果汁软糖零食</h2>
-                        <p>最新日本进口的清新水果味道的薯片最新日本进口的清新水果味道的薯片</p>
-                    </div>
-                </li>
-                <li class="brand-list" onclick="redirectPage()">
-                    <img class="brand-img" src="./images/pic_brand_product@2x.png" alt="自有品牌">
-                    <div class="brand-info">
-                        <h2>UHA悠哈果汁软糖零食</h2>
-                        <p>最新日本进口的清新水果味道的薯片最新日本进口的清新水果味道的薯片</p>
-                    </div>
-                </li>
-                <li class="brand-list" onclick="redirectPage()">
-                    <img class="brand-img" src="./images/pic_brand_product@2x.png" alt="自有品牌">
-                    <div class="brand-info">
-                        <h2>UHA悠哈果汁软糖零食</h2>
-                        <p>最新日本进口的清新水果味道的薯片最新日本进口的清新水果味道的薯片</p>
-                    </div>
-                </li>
+            <ul id="brand">
+               
             </ul>
 
             <!-- 查看更多 -->
@@ -60,21 +40,14 @@
 
             <!-- 品牌说明 -->
             <div class="brand-special">
-                <h3>品牌特色</h3>
-                <p>每个人都声称一个强大的网络。但是Twilio是唯一一个拥有多条通往美国主要运营商网络的平台，以及每个地区的强大的冗余运营商互联网络，几乎可以覆盖全球所有的移动用户。每个人都声称一个强大的网络。</p>
-                <!-- 轮播图 -->
+				<div id="cultural-info"></div>
+				
+               <!-- 轮播图 -->
                 <div id="cultural-wrap">
                     <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img class="us-img" src="./images/pic_brand_pic@2x.png" alt="关于我们logo">
-                            </div>
-                            <div class="swiper-slide">
-                                <img class="us-img" src="./images/pic_brand_pic@2x.png" alt="关于我们logo">
-                            </div>
-                            <div class="swiper-slide">
-                                <img class="us-img" src="./images/pic_brand_pic@2x.png" alt="关于我们logo">
-                            </div>
+                        <div class="swiper-wrapper" id="culturals">
+                            
+                           
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
@@ -84,12 +57,13 @@
 
             <!-- 公司信息 -->
             <div class="company-info">
-                <h3><a class="company-name" href="#">深圳市润昌隆实业有限公司</a></h3>
-                <p>企业热线 :（86）755-2518-4666 邓剑锋 </p>
-                <p>企业地址 : 深圳市罗湖区笋岗东路1002号宝安广场c座21楼</p>
-                <p class="manager-length">经营范围：休闲食品的生产与销售 </p>
-                <p class="business-license"> <span>营业执照</span>：
-                    <img src="./images/pic_brand_license@2x.png" alt="营业执照icon">
+                <h3><a class="company-name" href="#" id="company-name">深圳市润昌隆实业有限公司</a></h3>
+                <p>企业热线 :<span id="tel">（86）755-2518-4666</span> <span id="name">邓剑锋</span> </p>
+                <p>企业地址 : <span id="address">深圳市罗湖区笋岗东路1002号宝安广场c座21楼</span></p>
+                <p class="manager-length"><strong>经营范围：</strong><span id="range">闲食品的生产与销售</span> </p>
+                <p class="business-license"> <strong>营业执照：</strong>
+				<span id="img"></span>
+                    
                 </p>
             </div>
             <!-- 页脚信息 -->
@@ -102,21 +76,90 @@
 
         </div>
     </div>
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/swiper.min.js"></script>
-    <script>
-        // 跳转到品牌详情页面
-        function redirectPage() {
-            window.location.href = "./brandDetail.html";
-        }
-        // 轮播图
-        swiper = new Swiper('#cultural-wrap .swiper-container', {
-            autoplay: true, // 可选选项，自动滑动
-            pagination: {
-                el: '.swiper-pagination', // 滚动小图标
-            },
-        });
-    </script>
+   
 </body>
 
 </html>
+ <script src="./js/jquery.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script>
+		$(function(){
+			var base_url = 'http://food.lzdu.com/api/'
+			var img_url = 'http://food.resource.lzdu.com/'
+			
+			 $.ajax({
+			    type:"GET",
+			    url:base_url+'own_brand?pageSize=3',
+			    dataType:"json",
+			    success:function(data){
+					var html = ''
+			       for(var i=0;i<data.data.length;i++){
+					   var list = data.data[i];
+					    html +='<li class="brand-list" onclick="redirectPage('+list.id+')">'
+					        html +='<img class="brand-img" src="'+img_url+list.goods_img+'" alt="自有品牌">'
+					        html +='<div class="brand-info">'
+					            html +='<h2>'+list.goods_name+'</h2>'
+					            html +='<p>'+list.goods_intro+'</p>'
+					        html +='</div>'
+					    html +='</li>'
+					   
+				   }
+				   $('#brand').html(html)
+				   
+			    }
+			});
+			$.ajax({
+			    type:"GET",
+			    url:base_url+'own_brand/intro',
+			    dataType:"json",
+			    success:function(data){
+					var htmls = ''
+					var info = ''
+			       var swiper = data.picture_video
+				   for(var k = 0; k<swiper.length;k++){
+					   var swiper_item = swiper[k]
+					    htmls += '<div class="swiper-slide">'
+					      htmls +=  '<img class="us-img" src="'+img_url+swiper_item.url+'" alt="关于我们logo">'
+					   htmls += '</div>'
+				   }
+				   for(var j=0;j<data.brand_intro.length;j++){
+					   var lists = data.brand_intro[j]
+					   info += '<div class="list">'
+					   info += '<h3>'+lists.title+'</h3>'
+					   info += '<p>'+lists.intro+'<p>'
+					    info += '<p>'+lists.idea+'<p>'
+						 info += '<p>'+lists.feature+'<p>'
+					   info += '</div>'
+				   }
+				   $('#culturals').html(htmls)
+				   $('#cultural-info').html(info)
+				   // 轮播图
+				  swiper = new Swiper('#cultural-wrap .swiper-container', {
+				      autoplay: true, // 可选选项，自动滑动
+				      pagination: {
+				          el: '.swiper-pagination', // 滚动小图标
+				      },
+				  });
+				   
+			    }
+			});
+			$.ajax({
+			    type:"GET",
+			    url:base_url+'merchants_proxy',
+			    dataType:"json",
+			    success:function(data){
+					$('#company-name').html(data.name)
+			       $('#tel').html(data.tel)
+				   $('#name').html(data.contact)
+				   $('#address').html(data.address)
+				   $('#range').html(data.range)
+				   $('#img').html('<img src='+img_url+data.business_license+' >')
+			    }
+			});
+		})
+        // 跳转到品牌详情页面
+        function redirectPage(id) {
+            window.location.href = "./brandDetail.html?id="+id;
+        }
+       
+    </script>

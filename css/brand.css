@@ -125,9 +125,7 @@
 
 .brand-intro {
     position: relative;
-    display: flex;
-    display: -webkit-flex;
-    justify-content: center;
+    text-align: center;
     margin-top: 3.2rem;
 }
 
@@ -144,8 +142,8 @@
 
 .brand-intro img {
     width: 5rem;
-    height: 1.5rem;
-    vertical-align: middle;
+    height: auto;
+    vertical-align: baseline;
 }
 
 .brand-intro span {
@@ -234,7 +232,6 @@
     display: inline-block;
     margin-bottom: .5rem;
     font-size: 1.4rem;
-    font-weight: 500;
     color: #4A4A4A;
     line-height: 2rem;
     letter-spacing: 1px;

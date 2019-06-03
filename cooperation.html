@@ -18,7 +18,7 @@
     </header>
 
     <!-- 水平滚动图片 -->
-    <div class="slider-wrap">
+   <!-- <div class="slider-wrap">
         <a class="slider-img-wrap" href="./cooperationDetail.html">
             <img src="./images/pic_search_logo5@2x.png" alt="轮播图片">
             <p class="line"></p>
@@ -34,17 +34,25 @@
             <p class="line"></p>
             <p class="shop-name">良品铺子零食旗舰店</p>
         </a>
-    </div>
+    </div> -->
+	<div class="home-cooperation-wrap">
+		<div class="super-warp">
+			<ul class="home-cooperation-ul" id="super">
+		    
+		   
+			</ul>
+		</div>
+	</div>
 
     <!-- 滚动按钮 -->
-    <ul class="scroll-shot">
+    <!-- <ul class="scroll-shot">
         <li class="active"></li>
         <li></li>
         <li></li>
         <li>
             <p class="leaf-img"></p>
         </li>
-    </ul>
+    </ul> -->
 
 
 
@@ -56,34 +64,8 @@
             <img src="./images/pic_home_right@2x.png" alt="服务icon">
         </p>
 
-        <div class="cooperation-info">
-            <p>
-                每个人都声称一个强大的网络。但是Twilio是唯一一个拥有多条通往美国主要运营商网络的平台，以及每个地区的强大的冗余运营商互联网络，几乎可以覆盖全球所有的移动用户。每个人都声称一个强大的网络。
-            </p>
-
-            <!-- <ul class="cooperation-shot">
-                <li class="active"></li>
-                <li></li>
-                <li></li>
-            </ul> -->
-            <!-- 轮播图 -->
-            <div id="cultural-wrap">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img class="us-img" src="./images/pic_cooperation_pic@2x.png" alt="关于我们logo">
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="us-img" src="./images/pic_cooperation_pic@2x.png" alt="关于我们logo">
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="us-img" src="./images/pic_cooperation_pic@2x.png" alt="关于我们logo">
-                        </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
-            <!-- 轮播图结束 -->
+        <div class="cooperation-info" id="brand_server">
+            
         </div>
 
 
@@ -101,7 +83,67 @@
 
     <script src="./js/jquery.min.js"></script>
     <script src="./js/swiper.min.js"></script>
-    <script>
+    
+</body>
+
+</html>
+<script>
+		
+		$(function(){
+			var base_url = 'http://food.lzdu.com/api/'
+			var img_url = 'http://food.resource.lzdu.com/'
+			$.ajax({
+			    type:"GET",
+			    url:base_url+'super',
+			    dataType:"json",
+			    success:function(data){
+					var super_data = data
+					var supers = ''
+					for(var k=0;k<super_data.length;k++){
+						var super_list = super_data[k]
+						supers += '<li onclick="redirectCooperation('+super_list.id+')"><div class="warp">'
+						supers +=    '<div class="super-img-warp"><img src="'+img_url + super_list.logo+'" alt="合作品牌logo"></div>'
+						supers +=    '<p>'+super_list.name+'</p>'
+						supers += '</div></li>'
+						
+						
+					}					
+				   $('#super').html(supers)
+				   
+			    }
+			});
+			
+			$.ajax({
+				type: "GET",
+				url: base_url + 'super_server',
+				dataType: "json",
+				success: function(data) {
+					var brand_server = ''
+					brand_server += data.content
+					brand_server += '<div id="cultural-wrap">'
+					brand_server += '<div class="swiper-container">'
+					brand_server += '<div class="swiper-wrapper">'
+					for (var b = 0; b < data.images_url.length; b++) {
+						var imgs = data.images_url[b]
+						brand_server += '<div class="swiper-slide">'
+						brand_server += '<img class="us-img" src="' + img_url + imgs + '" alt="关于我们logo">'
+						brand_server += '</div>'
+					}
+			
+					brand_server += '</div>'
+					brand_server += '<div class="swiper-pagination"></div>'
+					brand_server += '</div>'
+					brand_server += '</div>'
+					$('#brand_server').html(brand_server);
+					cultural()
+			
+				}
+			});
+		})
+		// 跳转到商超合作
+		function redirectCooperation(x) {
+		    window.location.href = "./businessSuperCooperationDetail.html?id="+x;
+		}
         swiper = new Swiper('#cultural-wrap .swiper-container', {
             autoplay: true, // 可选选项，自动滑动
             pagination: {
@@ -109,6 +151,3 @@
             },
         });
     </script>
-</body>
-
-</html>

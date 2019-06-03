@@ -93,13 +93,25 @@
     color: #4A4A4A;
     cursor: pointer;
     text-align: center;
+	position: relative;
 }
-
-li.tab-active {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #4A4A4A;
-    border-bottom: 1px solid #F4C12F;
+.tab-menu li a{
+	color: #4A4A4A;
+	display: block;
+}
+li.tab-active a{
+	font-weight: 500;
+}
+li.tab-active a:after{
+	content: "";
+	position: absolute;
+    width: 16px;
+	background: #F8B51B;
+	height: 3px;
+	bottom: 0;
+	left: 50%;
+	margin-left: -8px;
+	border-radius: 3px;
 }
 
 .tab1 {

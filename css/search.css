@@ -89,14 +89,30 @@ body {
     color: #999;
     cursor: pointer;
     text-align: center;
+	outline: none;
 }
-
-li.tab-active {
+.tab-menu li a{
+	display: block;
+	color: #999;
+	position: relative;
+	height: 2.5rem;
+	outline: none;
+}
+li.tab-active a {
     color: #333;
     font-weight: 500;
-    border-bottom: 1px solid #F4C12F;
 }
-
+li.tab-active a:after{
+	content: "";
+	position: absolute;
+	width: 16px;
+	height: 3px;
+	background: #F4C12F;
+	border-radius: 3px;
+	left: 50%;
+	margin-left: -8px;
+	bottom: 0;
+}
 #content {
     margin-top: 1.6rem;
 }
@@ -236,7 +252,7 @@ li.tab-active {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 45%;
+    width: 48%;
     height: 20rem;
     border-radius: 3px;
     -webkit-border-radius: 3px;
@@ -261,6 +277,9 @@ li.tab-active {
     font-size: 1.4rem;
     font-weight: 500;
     color: #FF9513;
+	 white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .lots-of-fun-left p:last-of-type,
@@ -269,6 +288,9 @@ li.tab-active {
     font-size: 1.3rem;
     font-weight: 400;
     color: #4A4A4A;
+	 white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 

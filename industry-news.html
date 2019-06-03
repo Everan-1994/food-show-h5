@@ -21,12 +21,12 @@
 			<div class="news-list-wrap">
 				<!-- 搜索框 -->
 				<div class="news-search">
-					<input type="text" placeholder="搜索" id='keyword'>
+					<input type="text" placeholder="搜索"  id='keyword'>
 				</div>
 
 				<ul class="tab-menu">
-					<li class="tab-active"><a href="news.html">企业新闻</a></li>
-					<li><a href="industry-news.html">行业新闻</a></li>
+					<li><a href="news.html">企业新闻</a></li>
+					<li class="tab-active"><a href="industry-news.html">行业新闻</a></li>
 					<li><a href="expo-news.html">展会新闻</a></li>
 				</ul>
 
@@ -73,17 +73,18 @@
 
 
 		var page = 1
-		getNews(0, 1)
+		getNews(1, 1)
+		
 		$("#keyword").on('keypress',function(e) {
-                var keycode = e.keyCode;
-                var searchName = $(this).val();
-                if(keycode=='13') {
-                    e.preventDefault();
+		        var keycode = e.keyCode;
+		        var searchName = $(this).val();
+		        if(keycode=='13') {
+		            e.preventDefault();
 					
-                    getscrolldata(searchName)
-                    
-                }
-         });
+		            getscrolldata(searchName)
+		            
+		        }
+		 });
 		
 		function getscrolldata(keyWords){
 			$(window).unbind()
@@ -137,7 +138,6 @@
 			});
 			
 		}
-		
 		
 		function getNews(id, pages) {
 			page = pages
@@ -195,13 +195,13 @@
 		}
 
 			
-		$(window).bind('scroll',function(){
-			var height = $(document).height()
-			var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-			if (scrollTop + window.innerHeight >= (document.body.offsetHeight-100)) {					
-				getNews(0, page + 1)
-			}
-		})
+			$(window).bind('scroll',function(){
+				var height = $(document).height()
+				var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+				if (scrollTop + window.innerHeight >= (document.body.offsetHeight-100)) {					
+					getNews(1, page + 1)
+				}
+			})
 
 		
 	})

@@ -143,9 +143,9 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     width: 100%;
-    height: 33.7rem;
+    height: auto;
     margin-top: 1.8rem;
-    padding: 1.9rem 1.8rem 0 1.8rem;
+    padding: 1.9rem 1.8rem 1.8rem 1.8rem;
     background: #fff;
     box-shadow: 0px 1px 10px 0px#FFE69C;
     border-radius: 13px;
@@ -204,3 +204,78 @@
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
 }
+.super-warp{
+		overflow: hidden;
+		padding-bottom: 40px;
+	}
+	    
+    .home-cooperation-wrap .home-cooperation-ul {
+    	box-sizing: border-box;
+    	-moz-box-sizing: border-box;
+    	-webkit-box-sizing: border-box;
+		display: -webkit-box;
+		white-space: nowrap;
+		overflow: hidden;
+		-webkit-backface-visibility: hidden;
+		-webkit-perspective: 1000;
+		-webkit-overflow-scrolling: touch;
+		text-align: justify;
+		overflow-x: visible;
+		overflow-x: initial;
+    }
+
+    .home-cooperation-wrap .home-cooperation-ul li {
+		position: relative;
+    	width: 100px;
+    	height: 130px;
+    	padding: 0 5px 5px;   	
+    }
+	.home-cooperation-wrap .home-cooperation-ul li:first-child {
+		padding-left: 1.5rem;
+	}
+	.home-cooperation-wrap .home-cooperation-ul li:last-child {
+		padding-right: 1.5rem;
+	}
+	.warp{
+		background: rgba(255, 255, 255, 1);
+		border: 1px solid rgba(255, 230, 156, 1);
+		border-radius: 7px;
+		-webkit-border-radius: 7px;
+		-moz-border-radius: 7px;
+		-ms-border-radius: 7px;
+		-o-border-radius: 7px;
+		padding-left: 10px;
+		padding-right: 10px;
+		box-sizing: border-box;
+	}
+
+    .super-img-warp {
+    	height: 85px;
+    	display: -webkit-box;
+    	-webkit-box-pack: center;
+    	-webkit-box-align: center;
+    	-webkit-box-orient: vertical;
+    	text-align: center
+    }
+
+    .home-cooperation-wrap .home-cooperation-ul li img {
+    	max-width: 48px;
+    	max-height: 45px;
+    }
+
+    .home-cooperation-wrap .home-cooperation-ul li p {
+    	display: -webkit-box;
+    	width: 100%;
+    	padding-top: 1rem;
+		padding-bottom: 1rem;
+    	font-size: 1.2rem;
+    	font-weight: 400;
+    	line-height: 1.7rem;
+    	color: #4A4A4A;
+    	text-align: center;
+    	border-top: 1px solid #E8E9ED;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
+    	-webkit-box-orient: vertical;
+    	-webkit-line-clamp: 2;
+    }

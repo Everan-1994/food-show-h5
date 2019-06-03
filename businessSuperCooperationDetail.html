@@ -2,7 +2,7 @@
 <html lang="en">
 
 	<head>
-		<title>品牌合作详情</title>
+		<title>商超合作详情</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="./css/reset.css">
@@ -12,7 +12,7 @@
 
 	<body>
 		<header class="header-wrap">
-			<h2 class="header-title21">品牌合作</h2>
+			<h2 class="header-title21">商超合作</h2>
 			<h3 class="header-subtitle">lots of fun</h3>
 		</header>
 
@@ -48,7 +48,7 @@
 		var id = getParam('id')
 		$.ajax({
 			type: "GET",
-			url: base_url + 'brand/' + id,
+			url: base_url + 'super/' + id,
 			dataType: "json",
 			success: function(data) {
 				
