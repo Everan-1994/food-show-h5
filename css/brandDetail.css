@@ -8,7 +8,9 @@
 /* 
   渐变背景颜色
 */
-
+a{
+    -webkit-tap-highlight-color:transparent;
+}
 body {
     height: 100vh;
     background: linear-gradient(180deg, rgba(255, 248, 228, 1) 0%, rgba(255, 255, 255, 1) 100%);

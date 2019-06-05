@@ -3,7 +3,9 @@
 /* 
     关于我们  
 */
-
+a{
+    -webkit-tap-highlight-color:transparent;
+}
 .about-us-wrap {
     box-sizing: border-box;
     -moz-box-sizing: border-box;

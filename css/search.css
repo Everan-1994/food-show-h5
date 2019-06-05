@@ -298,7 +298,12 @@ li.tab-active a:after{
 
 
 /* 第二个tab选项卡的样式 */
-
+a{
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+-webkit-user-select: none;
+-moz-user-focus: none;
+-moz-user-select: none;
+}
 .tab2-wrap {
     display: flex;
     justify-content: space-between;

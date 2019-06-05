@@ -3,7 +3,9 @@
 /* 
     品牌合作
 */
-
+a{
+    -webkit-tap-highlight-color:transparent;
+}
 .container {
     background: url(../images/pic_brandcooperation_pic@2x.png) no-repeat;
     background-position: right 25%;

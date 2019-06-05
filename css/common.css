@@ -1,6 +1,9 @@
 /* 
     公共类样式
 */
+a{
+    -webkit-tap-highlight-color:transparent;
+}
 .no-contnt{
 	width: 100%;
 	text-align: center;
