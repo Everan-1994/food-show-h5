@@ -1,135 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <title>关于我们</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/aboutUs.css">
-    <link rel="stylesheet" href="./css/swiper.min.css">
-    <link rel="stylesheet" href="./css/accordion.css">
+	<head>
+		<title>关于我们</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="./css/reset.css">
+		<link rel="stylesheet" href="./css/common.css">
+		<link rel="stylesheet" href="./css/aboutUs.css">
+		<link rel="stylesheet" href="./css/swiper.min.css">
+		<link rel="stylesheet" href="./css/accordion.css">
 
-</head>
+	</head>
 
-<body>
-    <!-- 头部 -->
-    <header class="header-wrap">
-        <h2 class="header-title21">关于我们</h2>
-        <h3 class="header-subtitle">lots of fun</h3>
-    </header>
+	<body>
+		<!-- 头部 -->
+		<header class="header-wrap">
+			<h2 class="header-title21">关于我们</h2>
+			<h3 class="header-subtitle">lots of fun</h3>
+		</header>
 
-    <!-- 关于我们-->
-    <div class="about-us-wrap">
-        <div class="about-us-info">
-            <ul class="tab-menu">
-                <li class="tab-active">企业介绍</li>
-                <li>董事长致辞</li>
-                <li>企业文化</li>
-                <li>企业理念</li>
-            </ul>
-            <div id="content">
-                
-            </div>
-        </div>
-    </div>
+		<!-- 关于我们-->
+		<div class="about-us-wrap">
+			<div class="about-us-info">
+				<ul class="tab-menu">
+					<li class="tab-active">企业介绍</li>
+					<li>董事长致辞</li>
+					<li>企业文化</li>
+					<li>企业理念</li>
+				</ul>
+				<div id="content">
 
-    <!-- 常见问题 -->
-    <div class="normal-question">
-        <img src="./images/pic_home_left@2x.png" alt="">
-        <span>常见问题</span>
-        <img src="./images/pic_home_right@2x.png" alt="">
-    </div>
+				</div>
+			</div>
+		</div>
 
-    <!-- 常见问题列表 -->
-    <div class="container collapse" id="problem">
-       
-    </div>
+		<!-- 常见问题 -->
+		<div class="normal-question">
+			<img src="./images/pic_home_left@2x.png" alt="">
+			<span>常见问题</span>
+			<img src="./images/pic_home_right@2x.png" alt="">
+		</div>
 
-    <!-- 页脚信息 -->
-    <footer>
-        <div class="footer">
-            <p> <code>&#169</code>DANKAL . All rights reserved .</p>
-            <p>粤ICP备16007023号-1</p>
-        </div>
-    </footer>
-    <script src="js/tabs.js"></script>
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/swiper.min.js"></script>
-    <script src="js/accordion.js"></script>
-    <script>
-		
-		$(function(){
-			var base_url = 'http://food.lzdu.com/api/'
-			var img_url = 'http://food.resource.lzdu.com/'
-					$.ajax({
-				    type:"GET",
-				    url:base_url+'us_problem?pageSize=3',
-				    dataType:"json",
-				    success:function(data){
+		<!-- 常见问题列表 -->
+		<div class="container collapse" id="problem">
+
+		</div>
+		<input type="hidden" id="all_page" />
+		<!-- 页脚信息 -->
+		<footer>
+			<div class="footer">
+				<p> <code>&#169</code>DANKAL . All rights reserved .</p>
+				<p>粤ICP备16007023号-1</p>
+			</div>
+		</footer>
+		<script src="js/tabs.js"></script>
+		<script src="./js/jquery.min.js"></script>
+		<script src="./js/swiper.min.js"></script>
+
+		<script>
+			$(function() {
+				var base_url = 'http://food.lzdu.com/api/'
+				var img_url = 'http://food.resource.lzdu.com/'
+				$.ajax({
+					type: "GET",
+					url: base_url + 'us_problem?pageSize=6',
+					dataType: "json",
+					success: function(data) {
 						var about_data = data
 						var about = ''
-						for(var h=0;h<about_data.about_us.length;h++){
+						for (var h = 0; h < about_data.about_us.length; h++) {
 							var about_list = about_data.about_us[h]
-							 about += '<div class="tab tab'+(h+1)+'">'
-							    about += '<h3 class="tab1-title">'+about_list.title+' </h3>'
-							    about += '<div class="tab1-text">'
-								about += about_list.content
-							   about += ' </div>'
-													    
-							   //  about += '<div id="cultural-wrap">'
-							   //    about +=  ' <div class="swiper-container">'
-							   //         about +=  '<div class="swiper-wrapper">'
-							   //             about +=  '<div class="swiper-slide">'
-							   //                 about +=  '<img class="us-img" src="./images/pic_cooperation_pic@2x.png" alt="关于我们logo">'
-							   //             about +=  '</div>'
-							   //             
-							   //          about += '</div>'
-							   //         about += ' <div class="swiper-pagination"></div>'
-							   //     about +=  '</div>'
-							   // about += ' </div>'						    
-							about += '</div>'						                 						
+							about += '<div class="tab tab' + (h + 1) + '">'
+							about += '<h3 class="tab1-title">' + about_list.title + ' </h3>'
+							about += '<div class="tab1-text">'
+							about += about_list.content
+							about += ' </div>'
+							about += '</div>'
 						}
-						
+
 						var problem_html = ''
-						for(var q=0;q<about_data.common_problem.data.length;q++){
-							var problem = about_data.common_problem.data[q];						
-							problem_html += '<div class="problem-list">'
-							    problem_html += '<div class="answer"> Q:'+problem.question+'</div>'						   
-							      problem_html +=  '<div class="details-styling">'
-							        problem_html +=    '<p>A:'+problem.answer+'</p>'
-							      problem_html += ' </div>'						   
+						for (var q = 0; q < about_data.common_problem.data.length; q++) {
+							var problem = about_data.common_problem.data[q];
+							problem_html += '<div class="problem-list" onclick="getopen(this)">'
+							problem_html += '<div class="answer"> Q:' + problem.question + '</div>'
+							problem_html += '<div class="details-styling">'
+							problem_html += '<p>A:' + problem.answer + '</p>'
+							problem_html += ' </div>'
 							problem_html += '</div>'
 						}
-					   $('#content').html(about)
-					    $('#problem').html(problem_html)
-						
-						
-						$('.problem-list').click(function(){
-							$(this).find('.details-styling').toggle()
-							var deta = $(this).find('.details-styling')
-							if(deta.is(':visible')){
-								$(this).addClass('open')
-							}else{
-								$(this).removeClass('open')
-							}
-							
-						})
-					   
-				    }
+						$('#content').html(about)
+						$('#all_page').val(about_data.common_problem.last_page)
+						$('#problem').html(problem_html)
+
+
+// 						$('.problem-list').click(function() {
+// 							$(this).find('.details-styling').toggle()
+// 							var deta = $(this).find('.details-styling')
+// 							if (deta.is(':visible')) {
+// 								$(this).addClass('open')
+// 							} else {
+// 								$(this).removeClass('open')
+// 							}
+// 						})
+
+					}
 				});
 				
-				
-		})
-        // 关于我们轮播图
-        // swiper = new Swiper('#about-us-wrap .swiper-container', {
-        //     autoplay: true, // 可选选项，自动滑动
-        //     pagination: {
-        //         el: '.swiper-pagination',
-        //     },
-        // });
-    </script>
-</body>
+								
+			
+				var pages = 1
+				function page_data(i) {
+					pages = i
+					var last = $('#all_page').val()
+					if (last >= pages) {
+						$.ajax({
+							type: "GET",
+							url: base_url + 'us_problem?pageSize=6&page=' + pages,
+							dataType: "json",
+							success: function(data) {
+								var about_data = data
+								var problem_html = ''
+								for (var q = 0; q < about_data.common_problem.data.length; q++) {
+									var problem = about_data.common_problem.data[q];
+									problem_html += '<div class="problem-list" onclick="getopen(this)">'
+									problem_html += '<div class="answer"> Q:' + problem.question + '</div>'
+									problem_html += '<div class="details-styling">'
+									problem_html += '<p>A:' + problem.answer + '</p>'
+									problem_html += ' </div>'
+									problem_html += '</div>'
+								}
+								$('#problem').append(problem_html)
+// 								$('.problem-list').click(function() {
+// 									$(this).find('.details-styling').toggle()
+// 									var deta = $(this).find('.details-styling')
+// 									if (deta.is(':visible')) {
+// 										$(this).addClass('open')
+// 									} else {
+// 										$(this).removeClass('open')
+// 									}
+// 
+// 								})
+							}
+						})
+					} else {
+						$(window).unbind()
+					}
+
+				}
+
+				$(window).bind('scroll', function() {
+					var height = $(document).height()
+					var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+					if (scrollTop + window.innerHeight >= (document.body.offsetHeight - 100)) {
+						page_data(pages + 1)
+					}
+				})
+			})
+			
+			function getopen(e){
+				$(e).find('.details-styling').toggle()
+				var deta = $(e).find('.details-styling')
+				if (deta.is(':visible')) {
+					$(e).addClass('open')
+				} else {
+					$(e).removeClass('open')
+				}
+			}
+		</script>
+	</body>
 
 </html>

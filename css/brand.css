@@ -3,7 +3,15 @@
 /* 
     自有品牌样式
 */
-
+.brand_swiper{
+	padding-bottom: 30px !important;
+}
+.brand_swiper .swiper-pagination-bullets .swiper-pagination-bullet{
+	background: #DCDCDC !important;
+}
+.brand_swiper .swiper-pagination-bullets .swiper-pagination-bullet-active{
+	background: #FF9513 !important;
+}
 .brand-list {
     position: relative;
     box-sizing: border-box;

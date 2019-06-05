@@ -24,13 +24,13 @@
 			<div class="content-wrap">
 				<!-- tab选项卡 -->
 				<ul class="tab-menu">
-					<li class="tab-active" data-type="own_brand">
+					<li data-type="own_brand">
 						<a href="search.html">lost of fun</a>
 					</li>
 					<li data-type="brand">
 						<a href="search_brand.html">品牌合作</a>
 					</li>
-					<li data-type="super">
+					<li  class="tab-active" data-type="super">
 						<a href="search_super.html">商超合作</a>
 					</li>
 				</ul>
@@ -48,17 +48,14 @@
 						</div>
 
 						<!-- 显示搜索结果列表 -->
-						<div class="search-result-fun" id="secrch-lost" style="display: none;">
+						<ul class="tab3-wrap" id="secrch-lost" style="display: none;">
 
-						</div>
+						</ul>
 
 					</div>
 
 				</div>
 			</div>
-
-
-
 
 		</div>
 
@@ -119,7 +116,7 @@
 			var strs = new Array();
 			strs = str.split("|");
 			for (var i = 0; i < strs.length; i++) {
-				s += "<a href='search.html?key=" + strs[i] + "'>" + strs[i] + "</a>";
+				s += "<a href='search_super.html?key=" + strs[i] + "'>" + strs[i] + "</a>";
 			}
 			$("#history-box").append(s);
 		}
@@ -130,6 +127,7 @@
 			if (r != null) return decodeURI(r[2]);
 			return null;
 		}
+
 		$('.detele_history').click(function() {
 			$('#mask-wrap').show()
 			$('#ok').click(function() {
@@ -172,15 +170,15 @@
 					$('.search-history-wrap').hide()
 					$('#footer').addClass('removeposi')
 					var html = ''
-					var list = data.data
+					var list = data
 					if (list.length > 0) {
 						for (var i = 0; i < list.length; i++) {
-							var item = list[i]
-							html += '<div class="lots-of-fun-left" onclick=redirect_detail(' + item.id + ')>'
-							html += '<img src="' + img_url + item.goods_img + '" alt="lots-of-fun">'
-							html += '<p>' + item.goods_name + '</p>'
-							html += '<p>' + item.goods_intro + '</p>'
-							html += '</div>'
+							var item = list[i]					
+							html +='<li onclick="redirect_detail(' + item.id + ')">'
+							    html +='<div class="img-warp"><img src="'+img_url+item.logo+'"></div>'
+							    html +='<p>'+item.name+'</p>'
+							html +='</li>'
+							
 						}
 						$('#secrch-lost').append(html)
 					} else {
@@ -192,26 +190,26 @@
 					}
 					$('#secrch-lost').show()
 
-					if (page > data.last_page) {
-						$(window).unbind()
-					}
+					// if (page > data.last_page) {
+					// 	$(window).unbind()
+					// }
 
 				}
 			});
 		}
 		var active_id = $('.tab-menu li.tab-active').data('type')
-		$(window).bind('scroll', function() {
-			var height = $(document).height()
-			var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-			if (scrollTop + window.innerHeight >= (document.body.offsetHeight - 100)) {
-				var key = $('#searchValue').val();
-				get_data(active_id, key, page + 1)
-			}
-		})
+		// $(window).bind('scroll', function() {
+		// 	var height = $(document).height()
+		// 	var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+		// 	if (scrollTop + window.innerHeight >= (document.body.offsetHeight - 100)) {
+		// 		var key = $('#searchValue').val();
+		// 		get_data(active_id, key, page + 1)
+		// 	}
+		// })
 
 	})
 	//自有品牌
 	function redirect_detail(id) {
-		window.location.href = './brandDetail.html?id=' + id;
+		window.location.href = './businessSuperCooperationDetail.html?id=' + id;
 	}
 </script>

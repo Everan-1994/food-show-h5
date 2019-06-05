@@ -24,10 +24,10 @@
 			<div class="content-wrap">
 				<!-- tab选项卡 -->
 				<ul class="tab-menu">
-					<li class="tab-active" data-type="own_brand">
+					<li data-type="own_brand">
 						<a href="search.html">lost of fun</a>
 					</li>
-					<li data-type="brand">
+					<li class="tab-active" data-type="brand">
 						<a href="search_brand.html">品牌合作</a>
 					</li>
 					<li data-type="super">
@@ -48,17 +48,14 @@
 						</div>
 
 						<!-- 显示搜索结果列表 -->
-						<div class="search-result-fun" id="secrch-lost" style="display: none;">
+						<ul class="tab2-wrap" id="secrch-lost" style="display: none;">
 
-						</div>
+						</ul>
 
 					</div>
 
 				</div>
 			</div>
-
-
-
 
 		</div>
 
@@ -119,7 +116,7 @@
 			var strs = new Array();
 			strs = str.split("|");
 			for (var i = 0; i < strs.length; i++) {
-				s += "<a href='search.html?key=" + strs[i] + "'>" + strs[i] + "</a>";
+				s += "<a href='search_brand.html?key=" + strs[i] + "'>" + strs[i] + "</a>";
 			}
 			$("#history-box").append(s);
 		}
@@ -130,6 +127,7 @@
 			if (r != null) return decodeURI(r[2]);
 			return null;
 		}
+
 		$('.detele_history').click(function() {
 			$('#mask-wrap').show()
 			$('#ok').click(function() {
@@ -176,11 +174,13 @@
 					if (list.length > 0) {
 						for (var i = 0; i < list.length; i++) {
 							var item = list[i]
-							html += '<div class="lots-of-fun-left" onclick=redirect_detail(' + item.id + ')>'
-							html += '<img src="' + img_url + item.goods_img + '" alt="lots-of-fun">'
-							html += '<p>' + item.goods_name + '</p>'
-							html += '<p>' + item.goods_intro + '</p>'
+
+							html += '<li onclick="redirect_detail(' + item.id + ')">'
+							html += '<div class="tabs-circle">'
+							html += '<img class="tabs-circle-img" src="' + img_url + item.logo + '">'
 							html += '</div>'
+							html += '<p class="food-name">' + item.name + '</p>'
+							html += '</li>'
 						}
 						$('#secrch-lost').append(html)
 					} else {
@@ -212,6 +212,6 @@
 	})
 	//自有品牌
 	function redirect_detail(id) {
-		window.location.href = './brandDetail.html?id=' + id;
+		window.location.href = './cooperationDetail.html?id=' + id;
 	}
 </script>

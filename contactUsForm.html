@@ -75,7 +75,7 @@
 				<div class="mask-dialog">
 					<img class="success-icon" src="./images/pic_contact_medal@2x.png" alt="提交成功">
 					<p class="submit-success">提交成功</p>
-					<img class="detele-icon" onclick="delBtn()" src="./images/delete.png" alt="删除按钮">
+					<img class="detele-icon" src="./images/delete.png" alt="删除按钮">
 				</div>
 			</div>
 		</div>
@@ -156,9 +156,11 @@
 					console.log(data)
 					if (data) {
 						$('.success-mask').show();
-						setTimeout(function(){
+						$('.success-mask .detele-icon').click(function(){
 							$('.success-mask').hide();
-						},1500)
+						})
+							
+						
 					}
 				}
 			})

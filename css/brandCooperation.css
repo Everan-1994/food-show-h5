@@ -62,8 +62,17 @@
 }
 
 .brand-parter-logo img {
-    width: 3.6rem;
-    height: 1.9rem;
+    max-width: 3.6rem;
+    max-height: 1.9rem;
+}
+.brand_swiper{
+	padding-bottom: 30px !important;
+}
+.brand_swiper .swiper-pagination-bullets .swiper-pagination-bullet{
+	background: #DCDCDC !important;
+}
+.brand_swiper .swiper-pagination-bullets .swiper-pagination-bullet-active{
+	background: #FF9513 !important;
 }
 
 .brand-parter-title {
@@ -72,6 +81,9 @@
     font-weight: 400;
     color: #4A4A4A;
     text-align: center;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 

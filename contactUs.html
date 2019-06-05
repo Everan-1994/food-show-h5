@@ -1,138 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <title>联系我们</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/contactUs.css">
-</head>
+	<head>
+		<title>联系我们</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="./css/reset.css">
+		<link rel="stylesheet" href="./css/common.css">
+		<link rel="stylesheet" href="./css/contactUs.css">
+	</head>
 
-<body>
-    <!-- 头部 -->
-    <header class="header-wrap">
-        <h2 class="header-title21">联系我们</h2>
-        <h3 class="header-subtitle">lots of fun</h3>
-    </header>
+	<body>
+		<!-- 头部 -->
+		<header class="header-wrap">
+			<h2 class="header-title21">联系我们</h2>
+			<h3 class="header-subtitle">lots of fun</h3>
+		</header>
 
-    <!-- 内容区域 -->
-    <div class="contact-us-wrap">
-        <a href="./contactUsForm.html">
-            <img class="cooperation-submit" src="./images/ic_contact_button@2x.png" alt="合作提交">
-        </a>
-        <div class="contact-us-content">
-            <!-- 搜索框 -->
-            <div class="contact-us-search-wrap">
-                <input type="text" id="search-result" placeholder="搜索" onkeydown="keydownEvent()">
-            </div>
+		<!-- 内容区域 -->
+		<div class="contact-us-wrap">
+			<a href="./contactUsForm.html">
+				<img class="cooperation-submit" src="./images/ic_contact_button@2x.png" alt="合作提交">
+			</a>
+			<div class="contact-us-content">
+				<!-- 搜索框 -->
+				<div class="contact-us-search-wrap">
+					<input type="text" id="search-result" placeholder="搜索" onkeydown="keydownEvent()">
+				</div>
 
-            <!-- 地图 -->
-            <div class="map-wrap">
-                <img src="./images/pic_contact_map@2x.png" alt="map地图">
-            </div>
+				<!-- 地图 -->
+				<div class="map-wrap" id="map">
 
-            <!-- 地址列表 -->
-            <ul class="map-address-list-wrap">
-                <li>
-                    <h3 class="shop-address">北京复兴门百货</h3>
-                    <p class="special-address">
-                        北京西城区复兴门内大街101号百盛购物中心1F
-                    </p>
-                    <p class="tel-contact-man">
-                        0931-88888456 邓剑锋
-                    </p>
-                </li>
-                <li>
-                    <h3 class="shop-address">北京复兴门百货</h3>
-                    <p class="special-address">
-                        北京西城区复兴门内大街101号百盛购物中心1F
-                    </p>
-                    <p class="tel-contact-man">
-                        0931-88888456 邓剑锋
-                    </p>
-                </li>
-                <li>
-                    <h3 class="shop-address">北京复兴门百货</h3>
-                    <p class="special-address">
-                        北京西城区复兴门内大街101号百盛购物中心1F
-                    </p>
-                    <p class="tel-contact-man">
-                        0931-88888456 邓剑锋
-                    </p>
-                </li>
-            </ul>
+				</div>
 
-            <!-- 暂无搜索结果 -->
-            <div class="empty-search-result">
-                <p>
-                    没有查找到符合的结果“深圳”。
-                </p>
-            </div>
-        </div>
+				<!-- 地址列表 -->
+				<ul class="map-address-list-wrap" id="adderss-box">
 
-        <!-- 底部商家信息 -->
-        <div class="footer-shop-wrap">
-            <img class="shop-logo-wrap" src="./images/pic_contact_@2x.png" alt="商家icon">
-            <img class="right-leaf" src="./images/pic_contact_laft@2x.png" alt="叶子icon">
 
-            <div class="clear"></div>
+				</ul>
 
-            <ul class="company-info-wrap">
-                <li class="company-name">深圳市润昌隆实业有限公司</li>
-                <li class="company-tel">企业热线 :（86）755-2518-4666 </li>
-                <li class="company-address">企业地址 : 深圳市罗湖区笋岗东路1002号<br> 宝安广场c座21楼</li>
-            </ul>
+				<!-- 暂无搜索结果 -->
+				<div class="empty-search-result">
+					<p>
+						没有查找到符合的结果“<span id="keyword_text"></span>”。
+					</p>
+				</div>
+			</div>
 
-            <!-- 二维码图片 -->
-            <ul class="ecode-wrap">
-                <li>
-                    <div class="ecode-left-wrap">
-                        <img src="./images/pic_contact_code@2x.png" alt="二维码图片">
-                    </div>
-                    <p class="ecode-text">微信公众号二维码</p>
-                </li>
+			<!-- 底部商家信息 -->
+			<div class="footer-shop-wrap">
+				<img class="shop-logo-wrap" src="./images/pic_contact_@2x.png" alt="商家icon">
+				<img class="right-leaf" src="./images/pic_contact_laft@2x.png" alt="叶子icon">
 
-                <li>
-                    <div class="ecode-right-wrap">
-                        <img src="./images/pic_contact_code@2x.png" alt="客服二维码">
-                    </div>
-                    <p class="ecode-text">客服微信二维码</p>
-                </li>
+				<div class="clear"></div>
 
-            </ul>
+				<ul class="company-info-wrap">
+					<li class="company-name" id="commpanys_name">深圳市润昌隆实业有限公司</li>
+					<li class="company-tel">企业热线 :<span  id="tel">（86）755-2518-4666 </span></li>
+					<li class="company-address">企业地址 : <span id="address_id"></span></li>
+				</ul>
 
-            <div class="clear"></div>
-        </div>
-    </div>
+				<!-- 二维码图片 -->
+				<ul class="ecode-wrap">
+					<li>
+						<div class="ecode-left-wrap" id="wexin-code">
+							
+						</div>
+						<p class="ecode-text">微信公众号二维码</p>
+					</li>
+
+					<li>
+						<div class="ecode-right-wrap" id="kefu_code">
+							
+						</div>
+						<p class="ecode-text">客服微信二维码</p>
+					</li>
+
+				</ul>
+
+				<div class="clear"></div>
+			</div>
+		</div>
 
 
 
-    <!-- 页脚信息 -->
-    <footer>
-        <div class="footer">
-            <p> <code>&#169</code>DANKAL . All rights reserved .</p>
-            <p>粤ICP备16007023号-1</p>
-        </div>
-    </footer>
+		<!-- 页脚信息 -->
+		<footer>
+			<div class="footer">
+				<p> <code>&#169</code>DANKAL . All rights reserved .</p>
+				<p>粤ICP备16007023号-1</p>
+			</div>
+		</footer>
 
-    <script>
-        // 搜索框的回车事件
-        var showAddressList = document.getElementsByClassName('map-address-list-wrap')[0]; // 显示有搜索结果列表
-        // 获取用户搜索结果的值
-        var serachResultValue = document.getElementById('search-result');
 
-        var emptySearchValue = document.getElementsByClassName('empty-search-result')[0];
-
-        function keydownEvent() {
-            if (serachResultValue.value) {
-                showAddressList.style.display = "none";
-                emptySearchValue.style.display = "block";
-            }
-        }
-    </script>
-    <!--  -->
-</body>
+		<!--  -->
+	</body>
 
 </html>
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script>
+	$(function() {
+		var base_url = 'http://food.lzdu.com/api/'
+		var img_url = 'http://food.resource.lzdu.com/'
+		
+
+		function get_map(data) {
+			var address = ''
+			var map_html = ''
+			if (data.length > 0) {
+				for (var i = 0; i < data.length; i++) {
+					var item = data[i]
+					address += '<li data-lang=' + item.longitude + ' data-lat=' + item.latitude + '>'
+					address += '<h3 class="shop-address">' + item.name + '</h3>'
+					address += '<p class="special-address">'
+					address += item.address
+					address += '</p>'
+					address += '<p class="tel-contact-man">'
+					address += item.tel + item.contact
+					address += '</p>'
+					address += '</li>'
+				}
+				map_html = '<iframe src="map.html?lng=' + data[0].longitude + '&lat=' + data[0].latitude +
+					'" class="map_iframe" scrolling="no"></iframe>'
+
+			} else {
+				$('.empty-search-result').show()
+			}
+			$('#map').html(map_html)
+			$('#adderss-box').html(address)
+
+			$('.map-address-list-wrap li').click(function() {
+				var lang = $(this).data('lang');
+				var lat = $(this).data('lat');
+				var url = "map.html?lng=" + lang + "&lat=" + lat
+				$('.map_iframe').attr('src', url)
+			})
+		}
+		$.ajax({
+			type: "GET",
+			url: base_url + 'contact_us',
+			dataType: "json",
+			success: function(data) {
+				console.log(data)
+				var address = ''
+				var map_html = ''
+				if (data.length > 0) {
+					for (var i = 0; i < data.length; i++) {
+						var item = data[i]
+						address += '<li data-lang=' + item.longitude + ' data-lat=' + item.latitude + '>'
+						address += '<h3 class="shop-address">' + item.name + '</h3>'
+						address += '<p class="special-address">'
+						address += item.address
+						address += '</p>'
+						address += '<p class="tel-contact-man">'
+						address += item.tel + item.contact
+						address += '</p>'
+						address += '</li>'
+					}
+					map_html = '<iframe src="map.html?lng=' + data[0].longitude + '&lat=' + data[0].latitude +
+						'" class="map_iframe" scrolling="no"></iframe>'
+				}
+				$('#map').html(map_html)
+				$('#adderss-box').html(address)
+
+				$('.map-address-list-wrap li').click(function() {
+					var lang = $(this).data('lang');
+					var lat = $(this).data('lat');
+					var url = "map.html?lng=" + lang + "&lat=" + lat
+					$('.map_iframe').attr('src', url)
+				})
+			}
+		});
+		
+		$.ajax({
+			type: "GET",
+			url: base_url + 'footer',
+			dataType: "json",
+			success: function(data) {
+				$('#commpanys_name').html(data.name);
+				$('#tel').html(data.tel)
+				$('#address_id').html(data.address)
+				$('#wexin-code').html('<img src="'+ img_url+data.wx_qrcode +'">')
+				$('#kefu_code').html('<img src="'+ img_url+data.kf_qrcode +'">')
+			}
+		});
+
+		$("#search-result").on('keypress', function(e) {
+			var keycode = e.keyCode;
+			var searchName = $(this).val();
+			$('#keyword_text').text(searchName)
+			if (keycode == '13') {
+				e.preventDefault();
+				$.ajax({
+					type: "GET",
+					url: base_url + 'contact_us?name=' + searchName,
+					dataType: "json",
+					success: function(data) {
+						get_map(data)
+					}
+				})
+
+
+			}
+		});
+	})
+	// 搜索框的回车事件
+	//         var showAddressList = document.getElementsByClassName('map-address-list-wrap')[0]; // 显示有搜索结果列表
+	//         // 获取用户搜索结果的值
+	//         var serachResultValue = document.getElementById('search-result');
+	// 
+	//         var emptySearchValue = document.getElementsByClassName('empty-search-result')[0];
+	// 
+	//         function keydownEvent() {
+	//             if (serachResultValue.value) {
+	//                 showAddressList.style.display = "none";
+	//                 emptySearchValue.style.display = "block";
+	//             }
+	//         }
+</script>

@@ -5,17 +5,17 @@
 */
 
 body {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background: #FFF9E9;
+	position: absolute;
 }
 
 .container {
-    width: 100vw;
-    height: 100vh;
     background: url(../images/search_background@2x.png) no-repeat;
     background-position: bottom right;
     background-size: 100% 60%;
+	min-height: calc(100% - 56px);
 }
 
 .header-wrap {
@@ -240,26 +240,24 @@ li.tab-active a:after{
 
 .search-result-fun {
     margin-top: 1.3rem;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
+   overflow: hidden;
 }
 
 .lots-of-fun-left,
 .lots-of-fun-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    float: left;
     width: 48%;
-    height: 20rem;
+	text-align: center;
+	margin-bottom: 20px;
     border-radius: 3px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
     background: #fff;
+}
+.lots-of-fun-left:nth-child(even){
+	float: right;
 }
 
 .lots-of-fun-left img,
@@ -272,6 +270,8 @@ li.tab-active a:after{
 
 .lots-of-fun-left p:first-of-type,
 .lots-of-fun-right p:first-of-type {
+	padding-left: 10px;
+	padding-right: 10px;
     margin-top: 2.5rem;
     margin-bottom: .6rem;
     font-size: 1.4rem;
@@ -291,6 +291,9 @@ li.tab-active a:after{
 	 white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
 }
 
 
@@ -304,11 +307,12 @@ li.tab-active a:after{
 }
 
 .tab2-wrap li {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-right: 1.5rem;
+    margin-right: 1.5rem; */
+	text-align: center;
     margin-bottom: 1rem;
 }
 
@@ -334,8 +338,8 @@ li.tab-active a:after{
 
 .tabs-circle-img {
     display: inline-block;
-    width: 4.6rem;
-    height: 3.6rem;
+    max-width: 4.6rem;
+    max-height: 3.6rem;
 }
 
 .tab2-wrap .food-name {
@@ -343,6 +347,9 @@ li.tab-active a:after{
     font-size: 1.4rem;
     font-weight: 400;
     color: #4A4A4A;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
@@ -356,12 +363,8 @@ li.tab-active a:after{
 }
 
 .tab3-wrap li {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 31%;
-    height: 12rem;
     margin-bottom: 1rem;
     background: #fff;
     box-shadow: 0px 1px 2px 0px rgba(255, 230, 156, 0.5);
@@ -371,37 +374,47 @@ li.tab-active a:after{
     -ms-border-radius: 8px;
     -o-border-radius: 8px;
 }
-
+.img-warp{
+	height: 85px;
+	line-height: 85px;
+	text-align: center;
+	 display: flex;
+    justify-content:center;
+    align-items:Center;
+}
 .tab3-wrap img {
-    display: inline-block;
-    width: 5.2rem;
-    height: 4.9rem;
-    margin-bottom: 1.5rem;
+    max-width: 5.2rem;
+    max-height: 4.9rem;
 }
 
 .tab3-wrap p {
     margin: 0 .9rem;
-    padding-top: .6rem;
+    padding-top: 7px;
+	padding-bottom: 7px;
     border-top: 1px solid #E8E9ED;
     font-size: 1.3rem;
     font-weight: 400;
     color: #4A4A4A;
     line-height: 1.6rem;
     text-align: center;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 
 /* 页脚 */
 
 footer {
-    display: flex;
-    justify-content: center;
+    width: 100%;
+	padding-bottom: 20px;
+	position: absolute;
+	bottom: 0;
 }
 
-.footer {
-    position: absolute;
-    bottom: 2rem;
-}
+
 
 .footer p {
     font-size: 1.2rem;
@@ -414,7 +427,9 @@ footer {
 .footer p:first-child {
     margin-bottom: .8rem;
 }
-
+.rmssts{
+	font-size: 14px;
+}
 
 /* 搜索无结果的样式 */
 
@@ -436,4 +451,8 @@ footer {
     font-size: 1.7rem;
     font-weight: 400;
     color: #999;
+}
+.removeposi{
+	position: inherit !important;
+	bottom: inherit !important;
 }
