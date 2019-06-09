@@ -4,6 +4,10 @@
 a{
     -webkit-tap-highlight-color:transparent;
 }
+.mobilde-box{
+	max-width: 768px;
+	margin: 0 auto;
+}
 .no-contnt{
 	width: 100%;
 	text-align: center;

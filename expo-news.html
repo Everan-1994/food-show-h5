@@ -11,6 +11,7 @@
 	</head>
 
 	<body>
+		<div class="mobilde-box">
 		<header class="header-wrap">
 			<h2 class="header-title21">新闻中心</h2>
 			<h3 class="header-subtitle">lots of fun</h3>
@@ -21,13 +22,13 @@
 			<div class="news-list-wrap">
 				<!-- 搜索框 -->
 				<div class="news-search">
-					<input type="text" placeholder="搜索"  id='keyword'>
+					<input type="text" placeholder="搜索" id='keyword'>
 				</div>
 
 				<ul class="tab-menu">
 					<li><a href="news.html">企业新闻</a></li>
 					<li><a href="industry-news.html">行业新闻</a></li>
-					<li  class="tab-active"><a href="expo-news.html">展会新闻</a></li>
+					<li class="tab-active"><a href="expo-news.html">展会新闻</a></li>
 				</ul>
 
 				<!-- tabs选项卡 -->
@@ -50,7 +51,7 @@
 				</div>
 			</div>
 		</div>
-
+</div>
 		<!-- footer页脚 -->
 		<footer>
 			<div class="footer">
@@ -74,19 +75,19 @@
 
 		var page = 1
 		getNews(2, 1)
-		
-		$("#keyword").on('keypress',function(e) {
-		        var keycode = e.keyCode;
-		        var searchName = $(this).val();
-		        if(keycode=='13') {
-		            e.preventDefault();
-					
-		            getscrolldata(searchName)
-		            
-		        }
-		 });
-		
-		function getscrolldata(keyWords){
+
+		$("#keyword").on('keypress', function(e) {
+			var keycode = e.keyCode;
+			var searchName = $(this).val();
+			if (keycode == '13') {
+				e.preventDefault();
+
+				getscrolldata(searchName)
+
+			}
+		});
+
+		function getscrolldata(keyWords) {
 			$(window).unbind()
 			$.ajax({
 				type: "GET",
@@ -98,10 +99,10 @@
 					if (news.length > 0) {
 						for (var x = 0; x < news.length; x++) {
 							var new_list = news[x]
-			
+
 							news_html += '<div class="news-list-content" onclick="redirectPage(' + new_list.id + ')">'
 							<!-- 视频和图片文件代码都写在这里了，后期只要交互只需要根据返回的值，判断即可显示 -->
-			
+
 							<!-- 视频文件 -->
 							if (new_list.resource_type != 1) {
 								news_html += '<div class="video-con">'
@@ -114,7 +115,7 @@
 								<!-- 仅图片文件 -->
 								news_html += '<img class="news-list-img" src="' + img_url + new_list.image + '" alt="新闻icon">'
 							}
-			
+
 							news_html += '<div class="news-right">'
 							news_html += '<p class="news-title">'
 							news_html += new_list.title
@@ -133,12 +134,30 @@
 						news_html += '</div>'
 					}
 					$('#news').html(news_html)
-			
+					$('.video-con').click(function() {
+						var videos = $(this).find('video').get(0)
+						if ($(this).find('button').is(':hidden')) {
+							videos.pause();
+							$(this).find('button').show();
+						} else {
+							videos.play();
+							$(this).find('button').hide();
+						}
+						var vkey1 = true;
+						var vkey2 = true;
+						var that = $(this)
+						videos.addEventListener("pause", function() {
+							that.find('button').show();
+						})
+						videos.addEventListener("play", function() {
+							that.find('button').hide();
+						})
+					})
 				}
 			});
-			
+
 		}
-		
+
 		function getNews(id, pages) {
 			page = pages
 			$.ajax({
@@ -188,22 +207,41 @@
 						news_html += '</div>'
 					}
 					$('#news').append(news_html)
-
+					$('.video-con').click(function() {
+						var videos = $(this).find('video').get(0)
+						if ($(this).find('button').is(':hidden')) {
+							videos.pause();
+							$(this).find('button').show();
+						} else {
+							videos.play();
+							$(this).find('button').hide();
+						}
+						var vkey1 = true;
+						var vkey2 = true;
+						var that = $(this)
+						videos.addEventListener("pause", function() {
+							that.find('button').show();
+						})
+						videos.addEventListener("play", function() {
+							that.find('button').hide();
+						})
+					})
 				}
 			});
 
 		}
 
-			
-			$(window).bind('scroll',function(){
-				var height = $(document).height()
-				var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-				if (scrollTop + window.innerHeight >= (document.body.offsetHeight-100)) {					
-					getNews(2, page + 1)
-				}
-			})
+
+		$(window).bind('scroll', function() {
+			var height = $(document).height()
+			var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+			if (scrollTop + window.innerHeight >= (document.body.offsetHeight - 100)) {
+				getNews(2, page + 1)
+			}
+		})
 	})
+
 	function redirectPage(id) {
-		window.location.href = './newsDetail.html?id='+id;
+		window.location.href = './newsDetail.html?id=' + id;
 	}
 </script>

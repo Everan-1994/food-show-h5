@@ -3,6 +3,25 @@
 /* 
     自有品牌样式
 */
+.video-brand{
+	position: relative;
+}
+.video-brand video{
+	width: 100%;
+	height: auto;
+}
+.video-brand .btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent url(../images/pic_news_play@2x.png) no-repeat;
+    background-size: 100% 100%;
+    border: none;
+    outline: none;
+}
 .brand_swiper{
 	padding-bottom: 30px !important;
 }

@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container mobilde-box">
         <!-- 头部 -->
         <header class="header-wrap">
             <h2 class="header-title">lost of fun</h2>
@@ -119,7 +119,17 @@
 				   for(var k = 0; k<swiper.length;k++){
 					   var swiper_item = swiper[k]
 					    htmls += '<div class="swiper-slide">'
-					      htmls +=  '<img class="us-img" src="'+img_url+swiper_item.url+'" alt="关于我们logo">'
+						if(swiper_item.type==1){
+							htmls +=  '<img class="us-img" src="'+img_url+swiper_item.url+'" alt="关于我们logo">'
+						}else{
+							htmls += '<div class="video-brand">'
+							htmls += '<video class="video" poster="">'
+							htmls += '<source src="'+img_url+swiper_item.url+'" >'
+							htmls += '</video>'
+							htmls += '<button type="button" class="btn js-play-btn"></button>'
+							htmls += '</div>'
+						}
+					      
 					   htmls += '</div>'
 				   }
 				   for(var j=0;j<data.brand_intro.length;j++){
@@ -133,14 +143,34 @@
 				   }
 				   $('#culturals').html(htmls)
 				   $('#cultural-info').html(info)
+				   
+				  
 				   // 轮播图
 				  swiper = new Swiper('#cultural-wrap .swiper-container', {
-				      autoplay: true, // 可选选项，自动滑动
+				      //autoplay: true, // 可选选项，自动滑动
 				      pagination: {
 				          el: '.swiper-pagination', // 滚动小图标
 				      },
 				  });
-				   
+				    $('.video-brand').click(function(){
+				   	var videos = $(this).find('video').get(0)
+				   	if($(this).find('button').is(':hidden')){
+				   		videos.pause();
+				   		$(this).find('button').show();
+				   	}else{
+				   		videos.play();
+				   		$(this).find('button').hide();
+				   	}
+				   	var vkey1 = true;
+				   	var vkey2 = true;
+				   	var that = $(this)
+				   	videos.addEventListener("pause",function() {
+				   		that.find('button').show();
+				   	})
+				   	videos.addEventListener("play",function() {
+				   		that.find('button').hide();
+				   	})				
+				   })
 			    }
 			});
 			$.ajax({
