@@ -11,21 +11,20 @@
 	</head>
 
 	<body>
-		<div class="mobilde-box"> 
-		<header class="header-wrap">
-			<h2 class="header-title21">品牌合作</h2>
-			<h3 class="header-subtitle">lots of fun</h3>
-		</header>
+		<div class="mobilde-box">
+			<header class="header-wrap">
+				<h2 class="header-title21">品牌合作</h2>
+				<h3 class="header-subtitle">lots of fun</h3>
+			</header>
 
-		<!-- 合作客户信息 -->
-		<div class="cooperation-intro-wrap">
-			<div class="infor-wrap">
-				<h3 class="company-title"> </h3>
-				<div class="company-intro"></div>
-				
-				
-				<!-- 图片文件 -->
-				<!-- <img class="company-img" src="./images/pic_cooperation_product@2x.png" alt="cooperation">
+			<!-- 合作客户信息 -->
+			<div class="cooperation-intro-wrap">
+				<div class="infor-wrap">
+					<h3 class="company-title"> </h3>
+					<div class="company-intro"></div>
+					
+					<!-- 图片文件 -->
+					<!-- <img class="company-img" src="./images/pic_cooperation_product@2x.png" alt="cooperation">
 
 				
 				<div class="video-con">
@@ -34,8 +33,8 @@
 					</video>
 					<button type="button" class="btn js-play-btn"></button>
 				</div> -->
+				</div>
 			</div>
-		</div>
 		</div>
 		<script src="./js/jquery.min.js"></script>
 		<script src="./js/video.js"></script>
@@ -53,10 +52,34 @@
 			url: base_url + 'brand/' + id,
 			dataType: "json",
 			success: function(data) {
-				
+
 				$('.company-title').html(data.name)
 				$('.company-intro').html(data.content)
-
+				if (data.video != null) {
+					var video = '<div class="video-con"><video class="video" poster=""><source src="' + img_url + data.video +
+						'"></video><button type="button" class="btn js-play-btn"></button></div>'
+					$('.infor-wrap').append(video)
+					
+					$('.video-con').click(function() {
+						var videos = $(this).find('video').get(0)
+						if ($(this).find('button').is(':hidden')) {
+							videos.pause();
+							$(this).find('button').show();
+						} else {
+							videos.play();
+							$(this).find('button').hide();
+						}
+						var vkey1 = true;
+						var vkey2 = true;
+						var that = $(this)
+						videos.addEventListener("pause", function() {
+							that.find('button').show();
+						})
+						videos.addEventListener("play", function() {
+							that.find('button').hide();
+						})
+					})
+				} 
 			}
 		});
 

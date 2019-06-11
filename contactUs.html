@@ -26,7 +26,7 @@
 			<div class="contact-us-content">
 				<!-- 搜索框 -->
 				<div class="contact-us-search-wrap">
-					<input type="text" id="search-result" placeholder="搜索" onkeydown="keydownEvent()">
+					<input type="text" id="search-result" placeholder="搜索" >
 				</div>
 
 				<!-- 地图 -->
@@ -50,7 +50,7 @@
 
 			<!-- 底部商家信息 -->
 			<div class="footer-shop-wrap">
-				<img class="shop-logo-wrap" src="./images/pic_contact_@2x.png" alt="商家icon">
+				<img class="shop-logo-wrap" src="./images/pic_contact_@2x.png" id="logo" alt="商家icon">
 				<img class="right-leaf" src="./images/pic_contact_laft@2x.png" alt="叶子icon">
 
 				<div class="clear"></div>
@@ -183,6 +183,7 @@
 				$('#address_id').html(data.address)
 				$('#wexin-code').html('<img src="'+ img_url+data.wx_qrcode +'">')
 				$('#kefu_code').html('<img src="'+ img_url+data.kf_qrcode +'">')
+				$('#logo').attr('src',img_url+data.logo)
 			}
 		});
 
