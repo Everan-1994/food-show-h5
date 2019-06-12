@@ -132,15 +132,18 @@
 					      
 					   htmls += '</div>'
 				   }
-				   for(var j=0;j<data.brand_intro.length;j++){
-					   var lists = data.brand_intro[j]
+				   // for(var j=0;j<data.brand_intro.length;j++){
+					   var lists = data.brand_intro[0]
 					   info += '<div class="list">'
-					   info += '<h3>'+lists.title+'</h3>'
+					   info += '<h3>品牌介绍</h3>'
 					   info += '<p>'+lists.intro+'<p>'
-					    info += '<p>'+lists.idea+'<p>'
-						 info += '<p>'+lists.feature+'<p>'
+					    info += '<h3>品牌特征</h3>'
+					    info += '<p>'+lists.feature+'<p>'
+						 info += '<h3>品牌理念</h3>'
+						 info += '<p>'+lists.idea+'<p>'
+						 
 					   info += '</div>'
-				   }
+				   //}
 				   $('#culturals').html(htmls)
 				   $('#cultural-info').html(info)
 				   

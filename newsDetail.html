@@ -51,10 +51,12 @@
 				
 				$('.company-title').html(data.title)
 				$('.company-intro').html(data.content)
-				if(data.resource_type == 1){
+				if(data.image != null){
+					
 					var htmls='<img class="company-img" src="'+img_url+data.image+'" alt="cooperation">'
 					$('.infor-wrap').append(htmls)
-				}else{
+				}
+				if(data.video != null){
 					var video = '<div class="video-con"><video class="video" poster=""><source src="'+img_url+data.video+'"></video><button type="button" class="btn js-play-btn"></button></div>'
 					$('.infor-wrap').append(video)
 					

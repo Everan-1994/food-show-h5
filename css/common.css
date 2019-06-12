@@ -1,12 +1,17 @@
 /* 
     公共类样式
 */
+img,table,video{
+	max-width: 100% !important;
+	height: auto;
+}
 a{
     -webkit-tap-highlight-color:transparent;
 }
 .mobilde-box{
 	max-width: 768px;
 	margin: 0 auto;
+	overflow: hidden;
 }
 .no-contnt{
 	width: 100%;

@@ -21,17 +21,11 @@ a{
 }
 
 .brand-parter-wrap {
-    display: flex;
-    display: -webkit-flex;
-    flex-wrap: wrap;
+   overflow: hidden;
 }
 
 .brand-parter {
-    display: flex;
-    display: -webkit-flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    float: left;
     width: 23%;
     margin-bottom: 2.3rem;
     margin-right: .5rem;

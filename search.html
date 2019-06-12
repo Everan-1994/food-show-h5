@@ -163,7 +163,7 @@
 		}
 
 
-		function get_data(id, key, p) {
+		function get_data(id, key, p,type) {
 			page = p
 			$.ajax({
 				type: "GET",
@@ -174,6 +174,7 @@
 					$('#footer').addClass('removeposi')
 					var html = ''
 					var list = data.data
+					console.log(list)
 					if (list.length > 0) {
 						for (var i = 0; i < list.length; i++) {
 							var item = list[i]
@@ -189,6 +190,7 @@
 						html += '<img src="./images/search_pic@2x.png" alt="暂无内容图片">'
 						html += '<p>暂无内容</p>'
 						html += '</div>'
+						$('#footer').removeClass('removeposi')
 						$('#secrch-lost').append(html)
 					}
 					$('#secrch-lost').show()

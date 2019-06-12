@@ -199,7 +199,7 @@ li.tab-active a:after{
     margin-top: 3.8rem;
     margin-bottom: 3.7rem;
     width: 9.6rem;
-    height: 10.4rem;
+    height: auto;
 }
 
 .no-contnt p {

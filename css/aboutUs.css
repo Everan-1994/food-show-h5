@@ -81,6 +81,10 @@ a{
     line-height: 2.1rem;
     letter-spacing: 1px;
 }
+.tab1-text *{
+	max-width: 100% !important;
+	height: auto;
+}
 
 .us-img {
     width: 100%;

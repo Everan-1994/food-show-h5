@@ -16,7 +16,7 @@
 	<div class="mobilde-box">
     <!-- 页头信息 -->
     <header class="header-wrap">
-        <h2 class="header-title21">得克萨斯系列袋装进口薯片</h2>
+        <h2 class="header-title21"></h2>
         <h3 class="header-subtitle">lots of fun</h3>
     </header>
 
@@ -63,6 +63,7 @@
 					    html+='</div>'
 					   
 				   }
+				   $('.header-title21').html(data.goods_name)
 				   $('.product-detail-title').html(data.goods_name)
 				   $('#product-swiper').html(html)
 				   $('#contents').html(data.goods_content)

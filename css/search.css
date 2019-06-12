@@ -439,15 +439,15 @@ footer {
 /* 搜索无结果的样式 */
 
 .empty-wrap {
-    display: none;
-    margin-top: 6.5rem;
+    margin: 6rem auto 0;
     text-align: center;
 }
 
 .empty-wrap img {
     display: inline-block;
     width: 19.4rem;
-    height: 11.4rem;
+	max-width: 19.4rem;
+	max-height:135px;
     margin-bottom: 4.3rem
 }
 

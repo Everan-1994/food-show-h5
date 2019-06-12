@@ -13,74 +13,74 @@
 
 	<body>
 		<div class="mobilde-box">
-		<!-- 头部 -->
-		<header class="header-wrap">
-			<h2 class="header-title21">联系我们</h2>
-			<h3 class="header-subtitle">lots of fun</h3>
-		</header>
+			<!-- 头部 -->
+			<header class="header-wrap">
+				<h2 class="header-title21">联系我们</h2>
+				<h3 class="header-subtitle">lots of fun</h3>
+			</header>
 
-		<!-- form表单 -->
-		<div class="contact-us-form-wrap">
-			<div class="contact-us-form-content">
-				<form>
-					<ul>
-						<li>
-							<span class="form-label">姓名：</span>
-							<input type="text" placeholder="你的姓名(必填)" id="name">
-						</li>
-						<li>
-							<span class="form-label">邮箱：</span>
-							<input type="text" placeholder="您的邮箱" id="emial">
-						</li>
-						<li>
-							<span class="form-label">电话：</span>
-							<input type="text" placeholder="您的电话号码" id="tel">
-						</li>
-						<li>
-							<span class="form-label">地址：</span>
-							<input type="text" placeholder="您详细地址" id="address">
-						</li>
-						<li>
-							<span class="form-label">标题：</span>
-							<input type="text" placeholder="请填写标题" id="title">
-						</li>
-						<li>
-							<span class="form-label">留言：</span>
+			<!-- form表单 -->
+			<div class="contact-us-form-wrap">
+				<div class="contact-us-form-content">
+					<form>
+						<ul>
+							<li>
+								<span class="form-label">姓名：</span>
+								<input type="text" placeholder="你的姓名(必填)" id="name">
+							</li>
+							<li>
+								<span class="form-label">邮箱：</span>
+								<input type="text" placeholder="您的邮箱" id="emial">
+							</li>
+							<li>
+								<span class="form-label">电话：</span>
+								<input type="text" placeholder="您的电话号码" id="tel">
+							</li>
+							<li>
+								<span class="form-label">地址：</span>
+								<input type="text" placeholder="您详细地址" id="address">
+							</li>
+							<li>
+								<span class="form-label">标题：</span>
+								<input type="text" placeholder="请填写标题" id="title">
+							</li>
+							<li>
+								<span class="form-label">留言：</span>
 
-						</li>
-						<li>
-							<textarea placeholder="请输入您的留言" id="message"></textarea>
-						</li>
-						<li>
-							<div id="all_uplod-img"></div>
-							
-							<div class="upload-img">
-								<input type="file" class="upload-file" accept="image/jpg,image/png,image/jpeg,image/bmp" id="addimg" onchange="getimage()">
-								<img src="./images/pic_contact_add@2x.png" alt="上传图片">
-								<p class="max-uploads">上传图片(2/9)</p>
-							</div>
-							<div class="clear"></div>
-						</li>
-					</ul>
-				</form>
+							</li>
+							<li>
+								<textarea placeholder="请输入您的留言" id="message"></textarea>
+							</li>
+							<li>
+								<div id="all_uplod-img"></div>
 
-				<div class="submit-btn-wrap">
-					<button type="button" class="submit-btn" id="submit">提交按钮</button>
+								<div class="upload-img">
+									<input type="file" class="upload-file" accept="image/jpg,image/png,image/jpeg,image/bmp" id="addimg" onchange="getimage()">
+									<img src="./images/pic_contact_add@2x.png" alt="上传图片">
+									<p class="max-uploads">上传图片(<span id="imgs-length">0</span>/9)</p>
+								</div>
+								<div class="clear"></div>
+							</li>
+						</ul>
+					</form>
+
+					<div class="submit-btn-wrap">
+						<button type="button" class="submit-btn" id="submit">提交按钮</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- 提交成功mask -->
+			<div class="success-mask">
+				<div class="mask-center">
+					<div class="mask-dialog">
+						<img class="success-icon" src="./images/pic_contact_medal@2x.png" alt="提交成功">
+						<p class="submit-success">提交成功</p>
+						<img class="detele-icon" src="./images/delete.png" alt="删除按钮">
+					</div>
 				</div>
 			</div>
 		</div>
-
-		<!-- 提交成功mask -->
-		<div class="success-mask">
-			<div class="mask-center">
-				<div class="mask-dialog">
-					<img class="success-icon" src="./images/pic_contact_medal@2x.png" alt="提交成功">
-					<p class="submit-success">提交成功</p>
-					<img class="detele-icon" src="./images/delete.png" alt="删除按钮">
-				</div>
-			</div>
-		</div>
-</div>
 		<!-- 点击删除按钮隐藏遮罩层 -->
 
 	</body>
@@ -106,7 +106,7 @@
 			const email_reg = /^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/
 			const tel_reg = /^1(3|4|5|7|8)\d{9}$/
 			var images_arr = []
-			$('.already-upload-a').each(function(){
+			$('.already-upload-a').each(function() {
 				var img = $(this).data('index')
 				images_arr.push(img)
 			})
@@ -134,11 +134,11 @@
 			} else if (message == '') {
 				layer.msg('请输入留言')
 				return false
-			}else if (images_arr.length==0) {
+			} else if (images_arr.length == 0) {
 				layer.msg('请上传图片')
 				return false
 			}
-			
+
 			var data = {
 				title: title,
 				user_tel: tel,
@@ -157,11 +157,11 @@
 					console.log(data)
 					if (data) {
 						$('.success-mask').show();
-						$('.success-mask .detele-icon').click(function(){
+						$('.success-mask .detele-icon').click(function() {
 							$('.success-mask').hide();
 						})
-							
-						
+
+
 					}
 				}
 			})
@@ -175,46 +175,45 @@
 			alert('您的浏览器不支持图片上传，请升级您的浏览器');
 			return false;
 		}
-		var image = new Image();
-		var leng = files.length;
-		if (leng > 5) {
-			layer.msg('最多只能上传5张图片')
-
+		
+		var formData = new FormData()
+		formData.append('images_url[]', files[0])
+		if (imgs.length > 8) {
+			layer.msg('最多只能上传9张图片')
 		} else {
-			var formData = new FormData()
-			console.log(files[0])
-			formData.append('images_url[]', files[0])
-			$.ajax({
-				url: 'http://food.lzdu.com/api/uploads',
-				method: 'POST',
-				processData: false, // 必须
-				contentType: false, // 必须
-				dataType: 'json',
-				data: formData,
-				success(data) {
+		$.ajax({
+			url: 'http://food.lzdu.com/api/uploads',
+			method: 'POST',
+			processData: false, // 必须
+			contentType: false, // 必须
+			dataType: 'json',
+			data: formData,
+			success(data) {
+				if (data.length > 0) {
 					imgs.push(data[0])
-					if(data.length>0){
+					$('#imgs-length').html(imgs.length)
+					// if (imgs.length > 8) {
+					// 	layer.msg('最多只能上传9张图片')
+					// } else {
 						var img = ''
-						for(var s =0;s<imgs.length;s++){
+						for (var s = 0; s < imgs.length; s++) {
 							var images = imgs[s]
-							img+='<div class="already-upload-a" data-index='+images+'>'
-								img+='<img class="already-upload" src="'+img_url + images+'">'
-								img+='<div class="delete-img"></div>'
-							img+='</div>'
+							img += '<div class="already-upload-a" data-index=' + images + '>'
+							img += '<img class="already-upload" src="' + img_url + images + '">'
+							img += '<div class="delete-img"></div>'
+							img += '</div>'
 						}
 						$('#all_uplod-img').html(img)
 						layer.msg('上传成功')
-						
-						$('.delete-img').click(function(){
+
+						$('.delete-img').click(function() {
 							$(this).parent().remove()
 						})
-					}
-					
-					
-					
-					
+					//}
 				}
-			})
+			}
+		})
 		}
+
 	}
 </script>
