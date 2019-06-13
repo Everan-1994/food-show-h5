@@ -3,7 +3,23 @@
 /* 
     商超合作详情
 */
-
+.imgs-warp{
+	margin-top: 30px;
+	text-align: center;
+}
+.imgs-warp img{
+	max-width: 100%;
+	height: auto;
+}
+.img-warp-box{
+	width: 100%;
+	margin-top: 20px;
+	text-align: center;
+}
+.img-warp-box img{
+	max-width: 100%;
+	height: auto;
+}
 .cooperation-intro-wrap {
     box-sizing: border-box;
     -moz-box-sizing: border-box;

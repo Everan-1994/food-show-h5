@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>搜索</title>
 		<link rel="stylesheet" href="./css/reset.css">
@@ -52,6 +52,8 @@
 						<ul class="tab3-wrap" id="secrch-lost" style="display: none;">
 
 						</ul>
+						
+						<div id='no-data'></div>
 
 					</div>
 
@@ -97,11 +99,17 @@
 				var id = $('.tab-menu li.tab-active').data('type')
 				get_data(id, searchName, page)
 
-
 			}
 		});
+		$('#searchValue').blur(function(e){
+			var searchName = $(this).val();
+			setHistoryItems(searchName)			
+				e.preventDefault();
+				var id = $('.tab-menu li.tab-active').data('type')
+				get_data(id, searchName, page)			
+			
+		})
 		var url_key = getParam('key')
-		console.log(url_key)
 		if (url_key != '' && url_key != null) {
 			var ids = $('.tab-menu li.tab-active').data('type')
 			$("#searchValue").val(url_key)
@@ -173,6 +181,7 @@
 					var html = ''
 					var list = data
 					if (list.length > 0) {
+						
 						for (var i = 0; i < list.length; i++) {
 							var item = list[i]					
 							html +='<li onclick="redirect_detail(' + item.id + ')">'
@@ -181,16 +190,23 @@
 							html +='</li>'
 							
 						}
+						$('#secrch-lost').show()
 						$('#secrch-lost').append(html)
+						$('#no-data').hide()
 					} else {
-						html += '<div class="empty-wrap">'
-						html += '<img src="./images/search_pic@2x.png" alt="暂无内容图片">'
-						html += '<p>暂无内容</p>'
-						html += '</div>'
-						$('#footer').removeClass('removeposi')
-						$('#secrch-lost').append(html)
+						if(page==1){
+							html += '<div class="empty-wrap">'
+							html += '<img src="./images/search_pic@2x.png" alt="暂无内容图片">'
+							html += '<p>暂无内容</p>'
+							html += '</div>'
+							$('#footer').removeClass('removeposi')
+							$('#no-data').show()
+							$('#no-data').html(html)
+							$('#secrch-lost').hide()
+						}
+						
 					}
-					$('#secrch-lost').show()
+					//$('#secrch-lost').show()
 
 					// if (page > data.last_page) {
 					// 	$(window).unbind()

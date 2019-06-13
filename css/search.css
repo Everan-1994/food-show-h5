@@ -3,7 +3,11 @@
 /* 
     搜索页面样式
 */
-
+.mobilde-box{
+	max-width: 768px;
+	margin: 0 auto;
+	overflow: hidden;
+}
 body {
     width: 100%;
     height: 100%;

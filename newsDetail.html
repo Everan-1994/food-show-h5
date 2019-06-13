@@ -25,9 +25,7 @@
 				
 				
 				<!-- 图片文件 -->
-				
-
-				
+							
 				
 			</div>
 		</div>
@@ -56,6 +54,7 @@
 					var htmls='<img class="company-img" src="'+img_url+data.image+'" alt="cooperation">'
 					$('.infor-wrap').append(htmls)
 				}
+				
 				if(data.video != null){
 					var video = '<div class="video-con"><video class="video" poster=""><source src="'+img_url+data.video+'"></video><button type="button" class="btn js-play-btn"></button></div>'
 					$('.infor-wrap').append(video)
@@ -79,6 +78,10 @@
 							that.find('button').hide();
 						})				
 					})
+				}
+				if(data.detail_image&&data.detail_image !=null){
+					var detail ='<div class="img-warp-box"><img src='+img_url+data.detail_image+'/></div>'
+					$('.infor-wrap').append(detail)					
 				}
 			}
 		});

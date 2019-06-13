@@ -82,16 +82,16 @@
 			if (keycode == '13') {
 				e.preventDefault();
 
-				getscrolldata(searchName)
+				getscrolldata(searchName,1)
 
 			}
 		});
 
-		function getscrolldata(keyWords) {
+		function getscrolldata(keyWords,type) {
 			$(window).unbind()
 			$.ajax({
 				type: "GET",
-				url: base_url + 'news_list?keyword=' + keyWords,
+				url: base_url + 'news_list?keyword=' + keyWords+'&type='+type,
 				dataType: "json",
 				success: function(data) {
 					var news = data

@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>搜索</title>
 		<link rel="stylesheet" href="./css/reset.css">
@@ -12,74 +12,74 @@
 
 	<body>
 		<div class="mobilde-box">
-		<div class="container">
-			<header class="header-wrap">
-				<h2 class="search-text">搜索</h2>
-				<p class="title">lots of fun</p>
-				<div class="search-btn">
-					<img src="./images/search@2x.png" id="search-icon" class="search-icon" alt="搜索图标">
-					<input type="text" id="searchValue" onfocus="getSearchName()" placeholder="请输入搜索关键词">
-				</div>
-			</header>
-			<!-- 有搜索结果显示 -->
-			<div class="content-wrap">
-				<!-- tab选项卡 -->
-				<ul class="tab-menu">
-					<li class="tab-active" data-type="own_brand">
-						<a href="search.html">lost of fun</a>
-					</li>
-					<li data-type="brand">
-						<a href="search_brand.html">品牌合作</a>
-					</li>
-					<li data-type="super">
-						<a href="search_super.html">商超合作</a>
-					</li>
-				</ul>
-				<div id="content">
-					<div class="tab tab1">
-						<!-- 搜索历史 没有搜索之前显示搜索历史 -->
-						<div class="search-history-wrap">
-							<p class="search-history">
-								<a>搜索历史</a>
-								<img src="./images/search_delet@2x.png" class="detele_history" alt="删除图标">
-							</p>
-							<div class="history-info" id="history-box">
+			<div class="container">
+				<header class="header-wrap">
+					<h2 class="search-text">搜索</h2>
+					<p class="title">lots of fun</p>
+					<div class="search-btn">
+						<img src="./images/search@2x.png" id="search-icon" class="search-icon" alt="搜索图标">
+						<input type="text" id="searchValue" onfocus="getSearchName()" placeholder="请输入搜索关键词">
+					</div>
+				</header>
+				<!-- 有搜索结果显示 -->
+				<div class="content-wrap">
+					<!-- tab选项卡 -->
+					<ul class="tab-menu">
+						<li class="tab-active" data-type="own_brand">
+							<a href="search.html">lost of fun</a>
+						</li>
+						<li data-type="brand">
+							<a href="search_brand.html">品牌合作</a>
+						</li>
+						<li data-type="super">
+							<a href="search_super.html">商超合作</a>
+						</li>
+					</ul>
+					<div id="content">
+						<div class="tab tab1">
+							<!-- 搜索历史 没有搜索之前显示搜索历史 -->
+							<div class="search-history-wrap">
+								<p class="search-history">
+									<a>搜索历史</a>
+									<img src="./images/search_delet@2x.png" class="detele_history" alt="删除图标">
+								</p>
+								<div class="history-info" id="history-box">
+
+								</div>
+							</div>
+
+							<!-- 显示搜索结果列表 -->
+							<div class="search-result-fun" id="secrch-lost" style="display: none;">
 
 							</div>
-						</div>
-
-						<!-- 显示搜索结果列表 -->
-						<div class="search-result-fun" id="secrch-lost" style="display: none;">
-
+							<div id='no-data'></div>
 						</div>
 
 					</div>
+				</div>
 
+
+
+
+			</div>
+
+			<footer id="footer">
+				<div class="footer">
+					<p><code>&#169</code> DANKAL . All rights reserved</p>
+					<p>粤ICP备16007023号-1</p>
+				</div>
+			</footer>
+			<!-- 遮罩层 -->
+			<div class="mask" id="mask-wrap">
+				<div class="mask-wrap">
+					<h3 class="mask-title">是否清除搜索历史？</h3>
+					<p>
+						<span onclick="hiddenMask()">否</span>
+						<span id="ok">是</span>
+					</p>
 				</div>
 			</div>
-
-
-
-
 		</div>
-
-		<footer id="footer">
-			<div class="footer">
-				<p><code>&#169</code> DANKAL . All rights reserved</p>
-				<p>粤ICP备16007023号-1</p>
-			</div>
-		</footer>
-		<!-- 遮罩层 -->
-		<div class="mask" id="mask-wrap">
-			<div class="mask-wrap">
-				<h3 class="mask-title">是否清除搜索历史？</h3>
-				<p>
-					<span onclick="hiddenMask()">否</span>
-					<span id="ok">是</span>
-				</p>
-			</div>
-		</div>
-</div>
 	</body>
 
 </html>
@@ -99,12 +99,17 @@
 				e.preventDefault();
 				var id = $('.tab-menu li.tab-active').data('type')
 				get_data(id, searchName, page)
-
-
 			}
 		});
+		$('#searchValue').blur(function(e){
+			var searchName = $(this).val();
+			setHistoryItems(searchName)			
+				e.preventDefault();
+				var id = $('.tab-menu li.tab-active').data('type')
+				get_data(id, searchName, page)			
+			
+		})
 		var url_key = getParam('key')
-		console.log(url_key)
 		if (url_key != '' && url_key != null) {
 			var ids = $('.tab-menu li.tab-active').data('type')
 			$("#searchValue").val(url_key)
@@ -163,18 +168,20 @@
 		}
 
 
-		function get_data(id, key, p,type) {
+		function get_data(id, key, p, type) {
 			page = p
 			$.ajax({
 				type: "GET",
 				url: base_url + id + '?key_word=' + key + '&page=' + page,
 				dataType: "json",
 				success: function(data) {
+					if (page > data.last_page) {
+						$(window).unbind()
+					}
 					$('.search-history-wrap').hide()
 					$('#footer').addClass('removeposi')
 					var html = ''
 					var list = data.data
-					console.log(list)
 					if (list.length > 0) {
 						for (var i = 0; i < list.length; i++) {
 							var item = list[i]
@@ -184,20 +191,27 @@
 							html += '<p>' + item.goods_intro + '</p>'
 							html += '</div>'
 						}
+						$('#secrch-lost').show()
 						$('#secrch-lost').append(html)
+						$('#no-data').hide()
 					} else {
-						html += '<div class="empty-wrap">'
-						html += '<img src="./images/search_pic@2x.png" alt="暂无内容图片">'
-						html += '<p>暂无内容</p>'
-						html += '</div>'
-						$('#footer').removeClass('removeposi')
-						$('#secrch-lost').append(html)
+						if(page==1){
+							html += '<div class="empty-wrap">'
+							html += '<img src="./images/search_pic@2x.png" alt="暂无内容图片">'
+							html += '<p>暂无内容</p>'
+							html += '</div>'
+							$('#footer').removeClass('removeposi')
+							$('#no-data').show()
+							$('#no-data').html(html)
+							$('#secrch-lost').hide()
+						}
+						
 					}
-					$('#secrch-lost').show()
+					//$('#secrch-lost').show()
 
-					if (page > data.last_page) {
-						$(window).unbind()
-					}
+
+
+
 
 				}
 			});

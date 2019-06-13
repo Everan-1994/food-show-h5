@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>搜索</title>
 		<link rel="stylesheet" href="./css/reset.css">
@@ -52,7 +52,7 @@
 						<ul class="tab2-wrap" id="secrch-lost" style="display: none;">
 
 						</ul>
-
+						<div id='no-data'></div>
 					</div>
 
 				</div>
@@ -96,12 +96,17 @@
 				e.preventDefault();
 				var id = $('.tab-menu li.tab-active').data('type')
 				get_data(id, searchName, page)
-
-
 			}
 		});
+		$('#searchValue').blur(function(e){
+			var searchName = $(this).val();
+			setHistoryItems(searchName)			
+				e.preventDefault();
+				var id = $('.tab-menu li.tab-active').data('type')
+				get_data(id, searchName, page)			
+			
+		})
 		var url_key = getParam('key')
-		console.log(url_key)
 		if (url_key != '' && url_key != null) {
 			var ids = $('.tab-menu li.tab-active').data('type')
 			$("#searchValue").val(url_key)
@@ -183,16 +188,23 @@
 							html += '<p class="food-name">' + item.name + '</p>'
 							html += '</li>'
 						}
+						$('#secrch-lost').show()
 						$('#secrch-lost').append(html)
+						$('#no-data').hide()
 					} else {
-						html += '<div class="empty-wrap">'
-						html += '<img src="./images/search_pic@2x.png" alt="暂无内容图片">'
-						html += '<p>暂无内容</p>'
-						html += '</div>'
-						$('#secrch-lost').append(html)
-						$('#footer').removeClass('removeposi')
+						if(page==1){
+							html += '<div class="empty-wrap">'
+							html += '<img src="./images/search_pic@2x.png" alt="暂无内容图片">'
+							html += '<p>暂无内容</p>'
+							html += '</div>'
+							$('#no-data').show()
+							$('#no-data').html(html)
+							$('#secrch-lost').hide()
+							$('#footer').removeClass('removeposi')
+						}
+						
 					}
-					$('#secrch-lost').show()
+					//$('#secrch-lost').show()
 
 					if (page > data.last_page) {
 						$(window).unbind()
