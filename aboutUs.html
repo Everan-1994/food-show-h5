@@ -79,6 +79,24 @@
 							about += about_list.content
 							about += ' </div>'
 							about += '</div>'
+
+							about += '<div id="cultural-wraps">'
+						      about +=  ' <div class="swiper-container">'
+						           about +=  '<div class="swiper-wrapper">'
+						           if (about_list.image !== '') {
+						           		for(var x = 0 ;x<about_list.image.length;x++){
+								           	var item = about_list.image[x]
+								           	about +=  '<div class="swiper-slide">'
+								                   about +=  '<img class="us-img" src="'+img_url+item+'" alt="关于我们logo">'
+								               about +=  '</div>'
+								        }
+						           }  
+						               
+						               
+						            about += '</div>'
+						           about += ' <div class="swiper-pagination"></div>'
+						       about +=  '</div>'
+						   about += ' </div>'	
 						}
 
 						var problem_html = ''
@@ -95,6 +113,12 @@
 						$('#all_page').val(about_data.common_problem.last_page)
 						$('#problem').html(problem_html)
 
+						 swiper = new Swiper('#cultural-wraps .swiper-container', {
+				      //autoplay: true, // 可选选项，自动滑动
+				      pagination: {
+				          el: '.swiper-pagination', // 滚动小图标
+				      },
+				  });
 
 // 						$('.problem-list').click(function() {
 // 							$(this).find('.details-styling').toggle()
