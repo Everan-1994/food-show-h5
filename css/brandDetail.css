@@ -26,7 +26,15 @@ body {
 /* 
   产品详情
 */
-
+.imgs-boxs{
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+.imgs-boxs img{
+	max-width: 100%;
+	height: auto;
+}
 .product-detail-info {
     box-sizing: border-box;
     -moz-box-sizing: border-box;

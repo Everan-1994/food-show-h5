@@ -36,6 +36,9 @@
     <div class="product-detail-info">
         <h3 class="product-detail-title">产品详情</h3>
        <div class="product-info" id="contents"></div>
+	   <div class="imgs-boxs">
+		   
+	   </div>
     </div>
     </div>
    
@@ -62,6 +65,10 @@
 					       html+= '<img src="'+img_url+list+'" />'
 					    html+='</div>'
 					   
+				   }
+				   if(data.detail_img != null){
+					   var img = '<img src="'+img_url+data.detail_img+'"/>'
+					   $('.imgs-boxs').html(img)
 				   }
 				   $('.header-title21').html(data.goods_name)
 				   $('.product-detail-title').html(data.goods_name)

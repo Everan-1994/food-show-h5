@@ -2,6 +2,21 @@
 
 /* 联系我们form 表单填写 */
 
+.loading{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 40px;
+	height: 40px;
+	margin-top: -20px;
+	margin-left: -20px;
+	z-index: 999;
+	display: none;
+}
+.loading img{
+	width: 100%;
+	height: auto;
+}
 .contact-us-form-wrap {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
