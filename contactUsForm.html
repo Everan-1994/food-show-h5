@@ -69,6 +69,10 @@
 					</div>
 				</div>
 			</div>
+			
+			<div class="loading">
+				<img src="images/loading.gif" />
+			</div>
 
 			<!-- 提交成功mask -->
 			<div class="success-mask">
@@ -170,6 +174,7 @@
 	})
 
 	function getimage() {
+		$('.loading').show()
 		var files = document.getElementById('addimg').files;
 		if (typeof FileReader === 'undefined') {
 			alert('您的浏览器不支持图片上传，请升级您的浏览器');
@@ -204,6 +209,7 @@
 							img += '</div>'
 						}
 						$('#all_uplod-img').html(img)
+						$('.loading').hide()
 						layer.msg('上传成功')
 
 						$('.delete-img').click(function() {
