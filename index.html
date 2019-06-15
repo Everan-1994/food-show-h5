@@ -311,14 +311,14 @@
 						    about += '<div id="cultural-wraps">'
 						      about +=  ' <div class="swiper-container">'
 						           about +=  '<div class="swiper-wrapper">'
-						           if (about_list.image !== '') {
-						           		for(var x = 0 ;x<about_list.image.length;x++){
-								           	var item = about_list.image[x]
-								           	about +=  '<div class="swiper-slide">'
-								                   about +=  '<img class="us-img" src="'+img_url+item+'" alt="关于我们logo">'
-								               about +=  '</div>'
-								        }
-						           }     
+						           for(var x = 0 ;x<about_list.image.length;x++){
+						           	var item = about_list.image[x]
+						           	about +=  '<div class="swiper-slide">'
+						                   about +=  '<img class="us-img" src="'+img_url+item+'" alt="关于我们logo">'
+						               about +=  '</div>'
+						           }
+						               
+						               
 						            about += '</div>'
 						           about += ' <div class="swiper-pagination"></div>'
 						       about +=  '</div>'
