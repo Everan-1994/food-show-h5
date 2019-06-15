@@ -15,46 +15,46 @@
 
 	<body>
 		<div class="mobilde-box">
-		<!-- 头部 -->
-		<header class="header-wrap">
-			<h2 class="header-title21">关于我们</h2>
-			<h3 class="header-subtitle">lots of fun</h3>
-		</header>
+			<!-- 头部 -->
+			<header class="header-wrap">
+				<h2 class="header-title21">关于我们</h2>
+				<h3 class="header-subtitle">lots of fun</h3>
+			</header>
 
-		<!-- 关于我们-->
-		<div class="about-us-wrap">
-			<div class="about-us-info">
-				<ul class="tab-menu">
-					<li class="tab-active">企业介绍</li>
-					<li>董事长致辞</li>
-					<li>企业文化</li>
-					<li>企业理念</li>
-				</ul>
-				<div id="content">
+			<!-- 关于我们-->
+			<div class="about-us-wrap">
+				<div class="about-us-info">
+					<ul class="tab-menu">
+						<li class="tab-active">企业介绍</li>
+						<li>董事长致辞</li>
+						<li>企业文化</li>
+						<li>企业理念</li>
+					</ul>
+					<div id="content">
 
+					</div>
 				</div>
 			</div>
-		</div>
 
-		<!-- 常见问题 -->
-		<div class="normal-question">
-			<img src="./images/pic_home_left@2x.png" alt="">
-			<span>常见问题</span>
-			<img src="./images/pic_home_right@2x.png" alt="">
-		</div>
-
-		<!-- 常见问题列表 -->
-		<div class="container collapse" id="problem">
-
-		</div>
-		<input type="hidden" id="all_page" />
-		<!-- 页脚信息 -->
-		<footer>
-			<div class="footer">
-				<p> <code>&#169</code>DANKAL . All rights reserved .</p>
-				<p>粤ICP备16007023号-1</p>
+			<!-- 常见问题 -->
+			<div class="normal-question">
+				<img src="./images/pic_home_left@2x.png" alt="">
+				<span>常见问题</span>
+				<img src="./images/pic_home_right@2x.png" alt="">
 			</div>
-		</footer>
+
+			<!-- 常见问题列表 -->
+			<div class="container collapse" id="problem">
+
+			</div>
+			<input type="hidden" id="all_page" />
+			<!-- 页脚信息 -->
+			<footer>
+				<div class="footer">
+					<p> <code>&#169</code>DANKAL . All rights reserved .</p>
+					<p>粤ICP备16007023号-1</p>
+				</div>
+			</footer>
 		</div>
 		<script src="js/tabs.js"></script>
 		<script src="./js/jquery.min.js"></script>
@@ -78,25 +78,28 @@
 							about += '<div class="tab1-text">'
 							about += about_list.content
 							about += ' </div>'
-							about += '</div>'
 
 							about += '<div id="cultural-wraps">'
-						      about +=  ' <div class="swiper-container">'
-						           about +=  '<div class="swiper-wrapper">'
-						           if (about_list.image !== '') {
-						           		for(var x = 0 ;x<about_list.image.length;x++){
-								           	var item = about_list.image[x]
-								           	about +=  '<div class="swiper-slide">'
-								                   about +=  '<img class="us-img" src="'+img_url+item+'" alt="关于我们logo">'
-								               about +=  '</div>'
-								        }
-						           }  
-						               
-						               
-						            about += '</div>'
-						           about += ' <div class="swiper-pagination"></div>'
-						       about +=  '</div>'
-						   about += ' </div>'	
+							about += ' <div class="swiper-container">'
+							about += '<div class="swiper-wrapper">'
+							if (about_list.image !== '') {
+								for (var x = 0; x < about_list.image.length; x++) {
+									var item = about_list.image[x]
+									about += '<div class="swiper-slide">'
+									about += '<img class="us-img" src="' + img_url + item + '" alt="关于我们logo">'
+									about += '</div>'
+								}
+							}
+
+
+							about += '</div>'
+							about += ' <div class="swiper-pagination"></div>'
+							about += '</div>'
+							about += ' </div>'
+
+							about += '</div>'
+
+
 						}
 
 						var problem_html = ''
@@ -113,29 +116,30 @@
 						$('#all_page').val(about_data.common_problem.last_page)
 						$('#problem').html(problem_html)
 
-						 swiper = new Swiper('#cultural-wraps .swiper-container', {
-				      //autoplay: true, // 可选选项，自动滑动
-				      pagination: {
-				          el: '.swiper-pagination', // 滚动小图标
-				      },
-				  });
+						swiper = new Swiper('#cultural-wraps .swiper-container', {
+							autoplay: true, // 可选选项，自动滑动
+							pagination: {
+								el: '.swiper-pagination', // 滚动小图标
+							},
+						});
 
-// 						$('.problem-list').click(function() {
-// 							$(this).find('.details-styling').toggle()
-// 							var deta = $(this).find('.details-styling')
-// 							if (deta.is(':visible')) {
-// 								$(this).addClass('open')
-// 							} else {
-// 								$(this).removeClass('open')
-// 							}
-// 						})
+						// 						$('.problem-list').click(function() {
+						// 							$(this).find('.details-styling').toggle()
+						// 							var deta = $(this).find('.details-styling')
+						// 							if (deta.is(':visible')) {
+						// 								$(this).addClass('open')
+						// 							} else {
+						// 								$(this).removeClass('open')
+						// 							}
+						// 						})
 
 					}
 				});
-				
-								
-			
+
+
+
 				var pages = 1
+
 				function page_data(i) {
 					pages = i
 					var last = $('#all_page').val()
@@ -157,16 +161,16 @@
 									problem_html += '</div>'
 								}
 								$('#problem').append(problem_html)
-// 								$('.problem-list').click(function() {
-// 									$(this).find('.details-styling').toggle()
-// 									var deta = $(this).find('.details-styling')
-// 									if (deta.is(':visible')) {
-// 										$(this).addClass('open')
-// 									} else {
-// 										$(this).removeClass('open')
-// 									}
-// 
-// 								})
+								// 								$('.problem-list').click(function() {
+								// 									$(this).find('.details-styling').toggle()
+								// 									var deta = $(this).find('.details-styling')
+								// 									if (deta.is(':visible')) {
+								// 										$(this).addClass('open')
+								// 									} else {
+								// 										$(this).removeClass('open')
+								// 									}
+								// 
+								// 								})
 							}
 						})
 					} else {
@@ -183,8 +187,8 @@
 					}
 				})
 			})
-			
-			function getopen(e){
+
+			function getopen(e) {
 				$(e).find('.details-styling').toggle()
 				var deta = $(e).find('.details-styling')
 				if (deta.is(':visible')) {

@@ -365,15 +365,14 @@ a{
 /* tab3 选项卡样式 */
 
 .tab3-wrap {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
+    overflow: hidden;
 }
 
 .tab3-wrap li {
-    align-items: center;
+    float: left;
+	height: 138px;
     width: 31%;
+	margin-right: 3%;
     margin-bottom: 1rem;
     background: #fff;
     box-shadow: 0px 1px 2px 0px rgba(255, 230, 156, 0.5);
@@ -382,6 +381,9 @@ a{
     -moz-border-radius: 8px;
     -ms-border-radius: 8px;
     -o-border-radius: 8px;
+}
+.tab3-wrap li:nth-child(3n+0){
+	margin-right: 0;
 }
 .img-warp{
 	height: 85px;

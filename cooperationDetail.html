@@ -24,7 +24,7 @@
 					<div class="company-intro"></div>
 					
 					<!-- 图片文件 -->
-					<!-- <img class="company-img" src="./images/pic_cooperation_product@2x.png" alt="cooperation">
+					<!-- operation">
 
 				
 				<div class="video-con">
@@ -55,6 +55,10 @@
 
 				$('.company-title').html(data.name)
 				$('.company-intro').html(data.content)
+				if(data.image_url != null){
+					var img = '<div class="imgs-warp"><img class="company-img" src="'+img_url+data.image_url+'" ></div>'
+					$('.infor-wrap').append(img)
+				}
 				if (data.video != null) {
 					var video = '<div class="video-con"><video class="video" poster=""><source src="' + img_url + data.video +
 						'"></video><button type="button" class="btn js-play-btn"></button></div>'
@@ -79,11 +83,9 @@
 							that.find('button').hide();
 						})
 					})
-					if(data.image_url !=null){
-						var img = '<div class="imgs-warp"><img class="company-img" src="'+img_url+data.image_url+'" ></div>'
-						$('.infor-wrap').append(img)
-					}
-				} 
+					
+				}
+				
 			}
 		});
 
