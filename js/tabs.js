@@ -16,6 +16,12 @@ function showTab() {
         if (tabs[i] === this) {
             tabs[i].className = 'tab-active';
             contents[i].style.display = 'block';
+			swiper = new Swiper('.cultural-wraps .swiper-container', {
+			    autoplay: true, // 可选选项，自动滑动
+			    pagination: {
+			        el: '.swiper-pagination', // 滚动小图标
+			    },
+			});
         } else {
             tabs[i].className = '';
             contents[i].style.display = 'none';

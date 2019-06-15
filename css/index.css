@@ -7,13 +7,13 @@
 	background-position: right bottom;
 	background-size: 34% 4%;
 }
-#cultural-wraps{
+.cultural-wraps{
 	margin-bottom: 10px;	
 }
-#cultural-wraps .swiper-container{
+.cultural-wraps .swiper-container{
 	padding-bottom: 40px !important;
 }
-#cultural-wraps .swiper-pagination-bullet-active{
+.cultural-wraps .swiper-pagination-bullet-active{
 	background: #FF9513 !important;
 }
 #home-content-wrap {

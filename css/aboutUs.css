@@ -3,13 +3,13 @@
 /* 
     关于我们  
 */
-#cultural-wraps{
+.cultural-wraps{
 	margin-bottom: 10px;	
 }
-#cultural-wraps .swiper-container{
+.cultural-wraps .swiper-container{
 	padding-bottom: 40px !important;
 }
-#cultural-wraps .swiper-pagination-bullet-active{
+.cultural-wraps .swiper-pagination-bullet-active{
 	background: #FF9513 !important;
 }
 a{
